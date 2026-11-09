@@ -23,12 +23,28 @@ function compareReviews(a, b, key, fields) {
   return { total: a.length, agreed, share: a.length ? agreed / a.length : null, disagreements };
 }
 
+// Cohen's kappa for one nominal field: (observed agreement - chance agreement) / (1 - chance agreement), where the
+// chance agreement follows from how often each review uses each category (Cohen 1960).
+function cohensKappa(a, b, key, field) {
+  const byKey = new Map(b.map(r => [r[key], r]));
+  const pairs = a.map(ra => [normalize(ra[field]), normalize(byKey.get(ra[key])[field])]);
+  const n = pairs.length;
+  const observed = pairs.filter(([x, y]) => x === y).length / n;
+  const countA = new Map(), countB = new Map();
+  for (const [x, y] of pairs) { countA.set(x, (countA.get(x) || 0) + 1); countB.set(y, (countB.get(y) || 0) + 1); }
+  let chance = 0;
+  for (const [category, k] of countA) chance += (k / n) * ((countB.get(category) || 0) / n);
+  return { observed, chance, kappa: chance === 1 ? 1 : (observed - chance) / (1 - chance) };
+}
+
 if (require.main === module) {
   const [fileA, fileB, key, fields] = process.argv.slice(2);
   const read = f => parseCsv(fs.readFileSync(f, 'utf8'));
-  const r = compareReviews(read(fileA), read(fileB), key, fields.split(','));
+  const [a, b] = [read(fileA), read(fileB)];
+  const r = compareReviews(a, b, key, fields.split(','));
   console.log(`Agreement: ${r.agreed} of ${r.total} rows (${(100 * r.share).toFixed(1)} %)`);
+  if (!fields.includes(',')) console.log(`Cohen's kappa: ${cohensKappa(a, b, key, fields).kappa.toFixed(3)}`);
   for (const d of r.disagreements) console.log(`  ${d.key} [${d.field}]: "${d.a}" vs "${d.b}"`);
 }
 
-module.exports = { compareReviews };
+module.exports = { compareReviews, cohensKappa };

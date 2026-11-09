@@ -1,7 +1,7 @@
 {
   "title": "Architecture Recovery of Apache Tomcat 11: Scripts and Data",
   "upload_type": "software",
-  "description": "Replication package for the paper \"Architecture Recovery of Apache Tomcat 11\". It contains the scripts, queries, and result tables of a case study that compares mapping-based recovery (reflexion models) and clustering-based recovery (ACDC, Leiden) against the architecture documentation of Apache Tomcat 11.0.27.",
+  "description": "Replication package for the paper \"Recovering the Documented Architecture of Apache Tomcat 11: Mapping-Based versus Clustering-Based Techniques\". It contains the scripts, queries, and result tables of a case study that compares mapping-based recovery (reflexion models) and clustering-based recovery (ACDC, Leiden) against the architecture documentation of Apache Tomcat 11.0.27.",
   "creators": [
     { "name": "Miminoshvili, Demetre", "affiliation": "HAW Kiel" },
     { "name": "Thiesen, Paul", "affiliation": "HAW Kiel" },

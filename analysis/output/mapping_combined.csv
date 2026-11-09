@@ -1,0 +1,75 @@
+participant,diagrams,interface_level,implementation_level,decision,note
+Acceptor,11_nio,org.apache.tomcat.util.net.Acceptor,org.apache.tomcat.util.net.Acceptor,exact,
+AccessLogValve,31_synchronous,org.apache.catalina.valves.AccessLogValve,org.apache.catalina.valves.AccessLogValve,exact,
+ApplicationFilterFactory,31_synchronous,org.apache.catalina.core.ApplicationFilterFactory,org.apache.catalina.core.ApplicationFilterFactory,exact,
+BasicAuthenticator,41_basic,org.apache.catalina.authenticator.BasicAuthenticator,org.apache.catalina.authenticator.BasicAuthenticator,resolved,Login check of the request; the other candidate belongs to WebSocket (out of scope)
+BasicCredentials,41_basic,org.apache.catalina.authenticator.BasicAuthenticator$BasicCredentials,org.apache.catalina.authenticator.BasicAuthenticator$BasicCredentials,exact,
+Bootstrap,1_overview,org.apache.catalina.startup.Bootstrap,org.apache.catalina.startup.Bootstrap,exact,
+Catalina,1_overview 2_catalina_init 3_catalina_start_1,org.apache.catalina.startup.Catalina,org.apache.catalina.startup.Catalina,exact,
+CharsetMapper,5_catalina_start_3,org.apache.catalina.util.CharsetMapper,org.apache.catalina.util.CharsetMapper,exact,
+Child,4_catalina_start_2,,,unmappable,Role of a child container; not a type of its own (would be the same type as Container)
+Cluster,4_catalina_start_2 5_catalina_start_3,org.apache.catalina.Cluster,org.apache.catalina.Cluster,reviewed,No implementation in the scanned JARs (SimpleTcpCluster is in catalina-ha.jar); implementation level falls back to the interface
+ConnectionHandler,11_nio,org.apache.coyote.AbstractProtocol$ConnectionHandler,org.apache.coyote.AbstractProtocol$ConnectionHandler,exact,
+Connector(s),2_catalina_init 3_catalina_start_1,org.apache.catalina.connector.Connector,org.apache.catalina.connector.Connector,exact,exact (plural label)
+Connector,31_synchronous,org.apache.catalina.connector.Connector,org.apache.catalina.connector.Connector,exact,
+Container,4_catalina_start_2,org.apache.catalina.Container | org.apache.catalina.core.ContainerBase,org.apache.catalina.Container | org.apache.catalina.core.ContainerBase,reviewed,Generic role; common base class of the standard containers
+ContainerBackgroundProcessor,4_catalina_start_2,org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor,org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor,exact,
+Context,5_catalina_start_3 7_catalina_context_config 31_synchronous 41_basic,org.apache.catalina.Context | org.apache.catalina.core.StandardContext,org.apache.catalina.Context | org.apache.catalina.core.StandardContext,exact,
+ContextConfig,7_catalina_context_config,org.apache.catalina.startup.ContextConfig,org.apache.catalina.startup.ContextConfig,exact,
+CookieProcessor,5_catalina_start_3,org.apache.tomcat.util.http.CookieProcessor | org.apache.tomcat.util.http.Rfc6265CookieProcessor,org.apache.tomcat.util.http.CookieProcessor | org.apache.tomcat.util.http.Rfc6265CookieProcessor,reviewed,Only implementation
+CoyoteAdapter,2_catalina_init 21_http11 31_synchronous,org.apache.catalina.connector.CoyoteAdapter,org.apache.catalina.connector.CoyoteAdapter,exact,
+CoyoteRequest,11_nio 31_synchronous 41_basic,org.apache.coyote.Request,org.apache.coyote.Request,resolved,setNote() and getMimeHeaders() exist on the Coyote request
+CoyoteResponse,11_nio 31_synchronous,org.apache.coyote.Response,org.apache.coyote.Response,resolved,setNote() exists on the Coyote response
+CredentialHandler,41_basic,org.apache.catalina.CredentialHandler | org.apache.catalina.realm.MessageDigestCredentialHandler,org.apache.catalina.CredentialHandler | org.apache.catalina.realm.MessageDigestCredentialHandler,reviewed,Default credential handler of the realms
+DeployedApplication,6_catalina_host_config,org.apache.catalina.startup.HostConfig$DeployedApplication,org.apache.catalina.startup.HostConfig$DeployedApplication,exact,
+Digester,1_overview,org.apache.tomcat.util.digester.Digester,org.apache.tomcat.util.digester.Digester,exact,
+Engine,2_catalina_init 3_catalina_start_1 31_synchronous,org.apache.catalina.Engine | org.apache.catalina.core.StandardEngine,org.apache.catalina.Engine | org.apache.catalina.core.StandardEngine,exact,
+ErrorReportValve,31_synchronous 41_basic,org.apache.catalina.valves.ErrorReportValve,org.apache.catalina.valves.ErrorReportValve,exact,
+Executor(s),2_catalina_init 3_catalina_start_1,org.apache.catalina.Executor | org.apache.catalina.core.StandardThreadExecutor,org.apache.catalina.Executor | org.apache.catalina.core.StandardThreadExecutor,reviewed,Standard implementation; StandardVirtualThreadExecutor is optional
+Executor,11_nio,org.apache.tomcat.util.threads.ThreadPoolExecutor,org.apache.tomcat.util.threads.ThreadPoolExecutor,reviewed,Diagram 11_nio: Worker is a nested type of this executor; the endpoint field has the JDK type java.util.concurrent.Executor
+Filter A,31_synchronous,,,unmappable,"Filter of the web application; we recover the architecture of Tomcat only (settled after disagreement, see mapping_agreement.md)"
+Filter B,31_synchronous,,,unmappable,"Filter of the web application; we recover the architecture of Tomcat only (settled after disagreement, see mapping_agreement.md)"
+FilterChain,31_synchronous,jakarta.servlet.FilterChain | org.apache.catalina.core.ApplicationFilterChain,jakarta.servlet.FilterChain | org.apache.catalina.core.ApplicationFilterChain,reviewed,Only implementation
+Global Naming Resources,2_catalina_init 3_catalina_start_1,org.apache.catalina.deploy.NamingResourcesImpl,org.apache.catalina.deploy.NamingResourcesImpl,resolved,Type of the field globalNamingResources in StandardServer; has init() and start()
+Host,5_catalina_start_3 6_catalina_host_config 31_synchronous,org.apache.catalina.Host | org.apache.catalina.core.StandardHost,org.apache.catalina.Host | org.apache.catalina.core.StandardHost,resolved,Only candidate with getPipeline() and start(); the parser Host only reads the HTTP Host header
+HostConfig,6_catalina_host_config,org.apache.catalina.startup.HostConfig,org.apache.catalina.startup.HostConfig,exact,
+InputBuffer,21_http11,org.apache.coyote.http11.Http11InputBuffer,org.apache.coyote.http11.Http11InputBuffer,resolved,Only type with parseRequestLine() and parseHeaders(); neither draft candidate has them
+LockoutRealm,41_basic,org.apache.catalina.realm.LockOutRealm,org.apache.catalina.realm.LockOutRealm,exact,case-normalized
+Manager,5_catalina_start_3,org.apache.catalina.Manager | org.apache.catalina.session.StandardManager,org.apache.catalina.Manager | org.apache.catalina.session.StandardManager,exact,
+Mapper Listener,2_catalina_init 3_catalina_start_1,org.apache.catalina.mapper.MapperListener,org.apache.catalina.mapper.MapperListener,exact,exact (label normalized)
+MimeHeaders,41_basic,org.apache.tomcat.util.http.MimeHeaders,org.apache.tomcat.util.http.MimeHeaders,exact,
+NamingResourcesImpl,5_catalina_start_3,org.apache.catalina.deploy.NamingResourcesImpl,org.apache.catalina.deploy.NamingResourcesImpl,exact,
+NioEndpoint,11_nio,org.apache.tomcat.util.net.NioEndpoint,org.apache.tomcat.util.net.NioEndpoint,exact,
+Pipeline,4_catalina_start_2 5_catalina_start_3,org.apache.catalina.Pipeline | org.apache.catalina.core.StandardPipeline,org.apache.catalina.Pipeline | org.apache.catalina.core.StandardPipeline,exact,
+Poller,11_nio,org.apache.tomcat.util.net.NioEndpoint$Poller,org.apache.tomcat.util.net.NioEndpoint$Poller,exact,
+Processor,11_nio 21_http11,org.apache.coyote.Processor | org.apache.coyote.http11.Http11Processor,org.apache.coyote.Processor | org.apache.coyote.http11.Http11Processor,reviewed,Diagram 21_http11 shows HTTP/1.1
+Protocol,2_catalina_init 3_catalina_start_1 11_nio,org.apache.coyote.ProtocolHandler | org.apache.coyote.http11.Http11NioProtocol,org.apache.coyote.ProtocolHandler | org.apache.coyote.http11.Http11NioProtocol,reviewed,Draft matched the TLS version enum org.apache.tomcat.util.net.openssl.ciphers.Protocol; the box starts the Processor. NIO is the default connector
+Realm,4_catalina_start_2 5_catalina_start_3 41_basic,org.apache.catalina.Realm | org.apache.catalina.realm.RealmBase,org.apache.catalina.Realm | org.apache.catalina.realm.RealmBase,reviewed,Generic role; common base class of the realms (LockOutRealm and UserDatabaseRealm are boxes of their own)
+Request,31_synchronous 41_basic,org.apache.catalina.connector.Request,org.apache.catalina.connector.Request,resolved,"Only candidate with getHost(), getContext(), getWrapper(), getCoyoteRequest() and setRequest()"
+Response,31_synchronous,org.apache.catalina.connector.Response,org.apache.catalina.connector.Response,resolved,Only candidate with setResponse()
+SCI,5_catalina_start_3,jakarta.servlet.ServletContainerInitializer,jakarta.servlet.ServletContainerInitializer,resolved,SCI = ServletContainerInitializer; has onStartup()
+Selector,11_nio,,,unmappable,"JDK class (java.nio.channels.Selector); not Tomcat code (settled after disagreement, see mapping_agreement.md)"
+Server,1_overview 2_catalina_init 3_catalina_start_1,org.apache.catalina.Server | org.apache.catalina.core.StandardServer,org.apache.catalina.Server | org.apache.catalina.core.StandardServer,exact,
+ServerSocket,11_nio,,,unmappable,"JDK class (java.nio.channels.ServerSocketChannel); not Tomcat code (settled after disagreement, see mapping_agreement.md)"
+Service(s),2_catalina_init 3_catalina_start_1,org.apache.catalina.Service | org.apache.catalina.core.StandardService,org.apache.catalina.Service | org.apache.catalina.core.StandardService,exact,exact (plural label)
+Service,31_synchronous,org.apache.catalina.Service | org.apache.catalina.core.StandardService,org.apache.catalina.Service | org.apache.catalina.core.StandardService,exact,
+Servlet,31_synchronous,jakarta.servlet.Servlet,jakarta.servlet.Servlet,exact,
+SocketChannel,11_nio,,,unmappable,"JDK class (java.nio.channels.SocketChannel); not Tomcat code (settled after disagreement, see mapping_agreement.md)"
+SocketProcessor,11_nio,org.apache.tomcat.util.net.NioEndpoint$SocketProcessor,org.apache.tomcat.util.net.NioEndpoint$SocketProcessor,resolved,Diagram 11_nio shows NioEndpoint and its Poller; Nio2Endpoint appears in no diagram
+StandardContextValve,31_synchronous 41_basic,org.apache.catalina.core.StandardContextValve,org.apache.catalina.core.StandardContextValve,exact,
+StandardEngineValve,31_synchronous,org.apache.catalina.core.StandardEngineValve,org.apache.catalina.core.StandardEngineValve,exact,
+StandardHostValve,31_synchronous 41_basic,org.apache.catalina.core.StandardHostValve,org.apache.catalina.core.StandardHostValve,exact,
+StandardPipeline (Context),31_synchronous 41_basic,org.apache.catalina.core.StandardPipeline,org.apache.catalina.core.StandardPipeline,exact,exact (label normalized)
+StandardPipeline (Engine),31_synchronous,org.apache.catalina.core.StandardPipeline,org.apache.catalina.core.StandardPipeline,exact,exact (label normalized)
+StandardPipeline (Host),31_synchronous,org.apache.catalina.core.StandardPipeline,org.apache.catalina.core.StandardPipeline,exact,exact (label normalized)
+StandardPipeline (Wrapper),31_synchronous,org.apache.catalina.core.StandardPipeline,org.apache.catalina.core.StandardPipeline,exact,exact (label normalized)
+StandardRoot,5_catalina_start_3,org.apache.catalina.webresources.StandardRoot,org.apache.catalina.webresources.StandardRoot,exact,
+StandardWrapperValve,31_synchronous,org.apache.catalina.core.StandardWrapperValve,org.apache.catalina.core.StandardWrapperValve,exact,
+UserDatabaseRealm,41_basic,org.apache.catalina.realm.UserDatabaseRealm,org.apache.catalina.realm.UserDatabaseRealm,exact,
+UtilityExecutor,4_catalina_start_2,,,unmappable,"JDK class (java.util.concurrent.ScheduledExecutorService); not Tomcat code (settled after disagreement, see mapping_agreement.md)"
+Valve,4_catalina_start_2 5_catalina_start_3,org.apache.catalina.Valve | org.apache.catalina.valves.ValveBase,org.apache.catalina.Valve | org.apache.catalina.valves.ValveBase,reviewed,Generic role; common base class of the valves
+WebXml,7_catalina_context_config,org.apache.tomcat.util.descriptor.web.WebXml,org.apache.tomcat.util.descriptor.web.WebXml,exact,
+WebXmlParser,7_catalina_context_config,org.apache.tomcat.util.descriptor.web.WebXmlParser,org.apache.tomcat.util.descriptor.web.WebXmlParser,exact,
+WebappLoader,5_catalina_start_3,org.apache.catalina.loader.WebappLoader,org.apache.catalina.loader.WebappLoader,exact,
+Worker,11_nio,org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker,org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker,exact,
+Wrapper,5_catalina_start_3 31_synchronous,org.apache.catalina.Wrapper | org.apache.catalina.core.StandardWrapper,org.apache.catalina.Wrapper | org.apache.catalina.core.StandardWrapper,resolved,"Only candidate with allocate(), deallocate() and getPipeline()"

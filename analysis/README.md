@@ -30,7 +30,7 @@ Tools: jQAssistant CLI 2.9.1 (`jqassistant-commandline-neo4jv5`) with embedded N
 | 2 Repository analysis | `repo_stats.js` | `module_sizes.csv`: Java files, lines and code lines per module | done |
 | 2 Repository analysis | `doc_history.js` | `doc_history.csv`: commits to the architecture documentation up to the tag | done |
 | 2 Repository analysis | `doc_coverage.js <tomcat-checkout> analysis/output/mapping.csv` | `doc_coverage.csv`: code lines per module in the files and packages of the 67 mapped participants (with `mapping_draft.csv`, the 56 name-matched ones) | done |
-| 2 Repository analysis | `overview_stability.js` | `overview_checks.csv`: each statement of the overview's component descriptions checked against the code in yearly snapshots of the main line; `overview_activity.csv`: commits per year to the overview, the files of the six components, and `java/` (needs a full clone) | done |
+| 2 Repository analysis | `overview_stability.js` | `overview_checks.csv`: each statement of the overview's component descriptions checked against the code in yearly snapshots of the main line; `overview_activity.csv`: commits per year to the overview, the files of the six components, and `java/` (needs a full clone). The paper reports only the check at 11.0.27, since multi-commit analysis is out of its scope | done |
 | 3 Intended model | (from `overview.xml`, by hand) | `structural_model.csv`: documented containment relations | done |
 | 3 Intended model | `parse_diagrams.js` | `participants.csv`, `messages.csv` from the 11 PlantUML diagrams | done |
 | 3 Intended model | `draft_mapping.js` | `mapping_draft.csv`: proposed interface- and implementation-level type per participant | done (reviewed, see below) |
@@ -45,6 +45,10 @@ Tools: jQAssistant CLI 2.9.1 (`jqassistant-commandline-neo4jv5`) with embedded N
 | 7 RQ3 | `rq3_sheet.js` | `rq3_groups.csv`, `rq3_categories.csv`; `review/rq3_facts.md`, `review/rq3_rules.csv` | done (agreement: `review/rq3_agreement.md`) |
 | 8 RQ3 | `rq3_static.js` | `rq3_static.csv`, `rq3_static_summary.csv`: which absent messages a static analysis that follows the type hierarchy could resolve (needs the jQAssistant server) | done |
 | 9 RQ2 | `component_clusters.js` | `clustering_components.csv`: over how many clusters each clustering distributes the six documented components, per level | done |
+| 9 RQ2 | `random_baseline.js` | `clustering_random_baseline.csv`: chance level of the layer and component measures, from 1,000 seeded random partitions per run with the same cluster sizes; checks its observed values against `clustering_layers.csv` and `clustering_components.csv` | done |
+| RQ1 check | `combine_mapping.js` | `mapping_combined.csv`: each participant mapped to its interface and its implementation at once; run `reflexion.js analysis/output/mapping_combined.csv analysis/output/combined` (needs the jQAssistant server) | to run |
+
+Agreement of two reviews: `compare_reviews.js <a.csv> <b.csv> <key> <field>` prints the share of agreeing rows and, for a single field, Cohen's kappa (RQ3 classification, rules vs. Demetre: 47 of 48, κ = 0.97).
 
 Run all from the repository root, e.g. `node analysis/parse_diagrams.js <tomcat-checkout> analysis/output`. Steps 4 to 7 need `npm install --prefix analysis` once and the jQAssistant server (below). Tests: `npm test --prefix analysis`.
 
@@ -78,3 +82,4 @@ Plural labels such as `Service(s)` are mapped to the singular type. The interfac
 - `divergence_kinds.js` gives each divergence one kind by a fixed rule (`lib/divergence_kinds.js`): inheritance, creation, request-model, accessor, other; plus its direction in the layers (`up` would run against the layered style).
 - `rq3_sheet.js <author>` selects the messages absent at both levels (`lib/rq3.js`), writes the facts per message (`review/rq3_facts.md`, query `queries/absence_facts.cypher`), the classification by the codebook rules (`review/rq3_rules.csv`, codebook `review/rq3_instructions.md`) and an empty sheet per author. Compare with `node analysis/compare_reviews.js analysis/review/rq3_rules.csv analysis/review/rq3_<author>.csv id category`.
 - `rq3_static.js` takes the same messages and asks what a static analysis that follows the type hierarchy could recover. For every type on which the source calls the documented method (the target or a supertype of it), `queries/possible_receivers.cypher` lists the concrete in-scope classes that can receive the call. `resolveStatically` in `lib/rq3.js` then assigns `unique` (a creation, or a called type with one possible receiver), `ambiguous` (several possible receivers, so configuration or run time decides), `no-static-call` or `diagram-error`. The mechanism per message comes from `review/rq3_rules.csv`.
+

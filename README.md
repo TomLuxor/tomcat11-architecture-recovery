@@ -1,6 +1,6 @@
 # Architecture Recovery of Apache Tomcat 11: Scripts and Data
 
-Replication package for the paper *Architecture Recovery of Apache Tomcat 11* by Demetre Miminoshvili, Paul Thiesen, and Tom Unger (HAW Kiel, 2026).
+Replication package for the paper *Recovering the Documented Architecture of Apache Tomcat 11: Mapping-Based versus Clustering-Based Techniques* by Demetre Miminoshvili, Paul Thiesen, and Tom Unger (HAW Kiel, 2026).
 
 The study compares two static architecture recovery techniques against the architecture documentation that the maintainers of Apache Tomcat publish, using release 11.0.27:
 
@@ -24,10 +24,10 @@ The study compares two static architecture recovery techniques against the archi
 
 | Paper | Files in `analysis/output/` |
 |---|---|
-| Subject system (code size, documentation coverage and history) | `module_sizes.csv`, `doc_coverage.csv`, `doc_history.csv`, `overview_checks.csv`, `overview_activity.csv` |
+| Subject system (code size, documentation coverage and history) | `module_sizes.csv`, `doc_coverage.csv`, `doc_history.csv`, `overview_checks.csv` (the paper reports the check at 11.0.27) |
 | Intended model and mapping | `participants.csv`, `messages.csv`, `documented_relations.csv`, `mapping_draft.csv`, `mapping.csv` |
 | RQ1, reflexion models | `reflexion_summary.csv`, `reflexion_containment.csv`, `reflexion_messages.csv`, `divergences.csv`, `divergence_kinds.csv` |
-| RQ2, clusterings | `clustering_summary.csv`, `clustering_components.csv`, `clustering_layers.csv`, `clustering_mojofm.csv`, `clustering_runs.csv`, `clustering_assignments.csv` |
+| RQ2, clusterings | `clustering_summary.csv`, `clustering_components.csv`, `clustering_layers.csv`, `clustering_random_baseline.csv` (chance level), `clustering_mojofm.csv`, `clustering_runs.csv`, `clustering_assignments.csv` |
 | RQ3, missed messages | `rq3_categories.csv`, `rq3_static.csv`, `rq3_static_summary.csv` |
 
 ## Reproducing the results
