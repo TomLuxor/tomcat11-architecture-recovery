@@ -1,0 +1,110 @@
+diagram,alias,label,declared
+1_overview,Bootstrap,Bootstrap,false
+1_overview,Catalina,Catalina,false
+1_overview,Digester,Digester,false
+1_overview,Server,Server,false
+2_catalina_init,Catalina,Catalina,false
+2_catalina_init,Server,Server,false
+2_catalina_init,GNR,Global Naming Resources,false
+2_catalina_init,Services,Service(s),false
+2_catalina_init,Engine,Engine,false
+2_catalina_init,Executors,Executor(s),false
+2_catalina_init,MapperListener,Mapper Listener,false
+2_catalina_init,Connectors,Connector(s),false
+2_catalina_init,CoyoteAdapter,CoyoteAdapter,false
+2_catalina_init,Protocol,Protocol,false
+3_catalina_start_1,Catalina,Catalina,false
+3_catalina_start_1,Server,Server,false
+3_catalina_start_1,GNR,Global Naming Resources,false
+3_catalina_start_1,Services,Service(s),false
+3_catalina_start_1,Engine,Engine,false
+3_catalina_start_1,Executors,Executor(s),false
+3_catalina_start_1,MapperListener,Mapper Listener,false
+3_catalina_start_1,Connectors,Connector(s),false
+3_catalina_start_1,Protocol,Protocol,false
+4_catalina_start_2,Container,Container,false
+4_catalina_start_2,Cluster,Cluster,false
+4_catalina_start_2,Realm,Realm,false
+4_catalina_start_2,Child,Child,false
+4_catalina_start_2,Pipeline,Pipeline,false
+4_catalina_start_2,Valve,Valve,false
+4_catalina_start_2,UtilityExecutor,UtilityExecutor,false
+4_catalina_start_2,ContainerBackgroundProcessor,ContainerBackgroundProcessor,false
+5_catalina_start_3,Host,Host,false
+5_catalina_start_3,Context,Context,false
+5_catalina_start_3,NamingResourcesImpl,NamingResourcesImpl,false
+5_catalina_start_3,StandardRoot,StandardRoot,false
+5_catalina_start_3,WebappLoader,WebappLoader,false
+5_catalina_start_3,CookieProcessor,CookieProcessor,false
+5_catalina_start_3,CharsetMapper,CharsetMapper,false
+5_catalina_start_3,Realm,Realm,false
+5_catalina_start_3,Wrapper,Wrapper,false
+5_catalina_start_3,Pipeline,Pipeline,false
+5_catalina_start_3,Valve,Valve,false
+5_catalina_start_3,Manager,Manager,false
+5_catalina_start_3,Cluster,Cluster,false
+5_catalina_start_3,SCI,SCI,false
+6_catalina_host_config,Host,Host,false
+6_catalina_host_config,HostConfig,HostConfig,false
+6_catalina_host_config,DeployedApplication,DeployedApplication,false
+7_catalina_context_config,Context,Context,false
+7_catalina_context_config,ContextConfig,ContextConfig,false
+7_catalina_context_config,WebXmlParser,WebXmlParser,false
+7_catalina_context_config,WebXml,WebXml,false
+11_nio,NioEndpoint,NioEndpoint,true
+11_nio,ServerSocket,ServerSocket,true
+11_nio,SocketChannel,SocketChannel,true
+11_nio,Selector,Selector,true
+11_nio,Executor,Executor,true
+11_nio,Acceptor,Acceptor,false
+11_nio,Poller,Poller,false
+11_nio,SocketProcessor,SocketProcessor,false
+11_nio,Worker,Worker,false
+11_nio,ConnectionHandler,ConnectionHandler,false
+11_nio,Protocol,Protocol,false
+11_nio,Processor,Processor,false
+11_nio,CoyoteRequest,CoyoteRequest,false
+11_nio,CoyoteResponse,CoyoteResponse,false
+21_http11,Processor,Processor,false
+21_http11,InputBuffer,InputBuffer,false
+21_http11,CoyoteAdapter,CoyoteAdapter,false
+31_synchronous,CoyoteRequest,CoyoteRequest,true
+31_synchronous,CoyoteResponse,CoyoteResponse,true
+31_synchronous,CoyoteAdapter,CoyoteAdapter,false
+31_synchronous,Connector,Connector,false
+31_synchronous,Request,Request,false
+31_synchronous,Response,Response,false
+31_synchronous,Service,Service,false
+31_synchronous,Engine,Engine,false
+31_synchronous,StandardPipeline\n(Engine),StandardPipeline (Engine),false
+31_synchronous,StandardEngineValve,StandardEngineValve,false
+31_synchronous,Host,Host,false
+31_synchronous,StandardPipeline\n(Host),StandardPipeline (Host),false
+31_synchronous,AccessLogValve,AccessLogValve,false
+31_synchronous,ErrorReportValve,ErrorReportValve,false
+31_synchronous,StandardHostValve,StandardHostValve,false
+31_synchronous,Context,Context,false
+31_synchronous,StandardPipeline\n(Context),StandardPipeline (Context),false
+31_synchronous,StandardContextValve,StandardContextValve,false
+31_synchronous,Wrapper,Wrapper,false
+31_synchronous,StandardPipeline\n(Wrapper),StandardPipeline (Wrapper),false
+31_synchronous,StandardWrapperValve,StandardWrapperValve,false
+31_synchronous,ApplicationFilterFactory,ApplicationFilterFactory,false
+31_synchronous,FilterChain,FilterChain,false
+31_synchronous,Filter\nA,Filter A,false
+31_synchronous,Filter\nB,Filter B,false
+31_synchronous,Servlet,Servlet,false
+41_basic,MimeHeaders,MimeHeaders,true
+41_basic,CoyoteRequest,CoyoteRequest,true
+41_basic,Request,Request,true
+41_basic,ErrorReportValve,ErrorReportValve,false
+41_basic,StandardHostValve,StandardHostValve,false
+41_basic,Context,Context,false
+41_basic,StandardPipeline\n(Context),StandardPipeline (Context),false
+41_basic,BasicAuthenticator,BasicAuthenticator,false
+41_basic,LockoutRealm,LockoutRealm,false
+41_basic,BasicCredentials,BasicCredentials,false
+41_basic,UserDatabaseRealm,UserDatabaseRealm,false
+41_basic,CredentialHandler,CredentialHandler,false
+41_basic,Realm,Realm,false
+41_basic,StandardContextValve,StandardContextValve,false

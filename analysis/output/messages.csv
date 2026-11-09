@@ -1,0 +1,488 @@
+diagram,line,from,to,kind,message
+1_overview,22,Bootstrap,Bootstrap,self,initClassLoaders()
+1_overview,24,Bootstrap,Catalina,create,newInstance()
+1_overview,26,Bootstrap,Catalina,call,setParentClassLoader()
+1_overview,28,,,return,
+1_overview,30,Bootstrap,Catalina,call,start()
+1_overview,32,Catalina,Catalina,self,load()
+1_overview,34,Catalina,Catalina,self,initNaming()
+1_overview,36,Catalina,Catalina,self,parseServerXml()
+1_overview,38,Catalina,Digester,create,
+1_overview,47,Catalina,Digester,call,parse()
+1_overview,49,Digester,Server,create,
+1_overview,51,,,return,
+1_overview,53,,,return,
+1_overview,56,Catalina,Catalina,self,initStream()
+1_overview,59,Catalina,Server,call,init()
+1_overview,61,,,return,
+1_overview,64,,,return,
+1_overview,68,Catalina,Server,call,start()
+1_overview,70,,,return,
+1_overview,74,Catalina,Catalina,self,await()
+1_overview,79,,,return,
+1_overview,82,Catalina,Catalina,self,stop()
+1_overview,84,Catalina,Server,call,stop()
+1_overview,86,,,return,
+1_overview,88,Catalina,Server,call,destroy()
+1_overview,90,,,return,
+1_overview,92,,,return,
+1_overview,94,,,return,
+2_catalina_init,23,Catalina,Server,call,init()
+2_catalina_init,25,Server,Server,self,fireLifecycleEvent(\n    BEFORE_INIT_EVENT)
+2_catalina_init,27,Server,Server,self,initInternal()
+2_catalina_init,29,Server,GNR,call,init()
+2_catalina_init,30,GNR,GNR,self,fireLifecycleEvent(\n    BEFORE_INIT_EVENT)
+2_catalina_init,31,GNR,GNR,self,initInternal()
+2_catalina_init,32,GNR,GNR,self,fireLifecycleEvent(\n    AFTER_INIT_EVENT)
+2_catalina_init,33,,,return,
+2_catalina_init,36,Server,Services,call,init()
+2_catalina_init,38,Services,Services,self,fireLifecycleEvent(\n    BEFORE_INIT_EVENT)
+2_catalina_init,40,Services,Services,self,initInternal()
+2_catalina_init,42,Services,Engine,call,init()
+2_catalina_init,43,Engine,Engine,self,fireLifecycleEvent(\n    BEFORE_INIT_EVENT)
+2_catalina_init,44,Engine,Engine,self,initInternal()
+2_catalina_init,51,Engine,Engine,self,fireLifecycleEvent(\n    AFTER_INIT_EVENT)
+2_catalina_init,52,,,return,
+2_catalina_init,55,Services,Executors,call,init()
+2_catalina_init,56,Executors,Executors,self,fireLifecycleEvent(\n    BEFORE_INIT_EVENT)
+2_catalina_init,57,Executors,Executors,self,initInternal()
+2_catalina_init,58,Executors,Executors,self,fireLifecycleEvent(\n    AFTER_INIT_EVENT)
+2_catalina_init,59,,,return,
+2_catalina_init,62,Services,MapperListener,call,init()
+2_catalina_init,63,MapperListener,MapperListener,self,fireLifecycleEvent(\n    BEFORE_INIT_EVENT)
+2_catalina_init,64,MapperListener,MapperListener,self,initInternal()
+2_catalina_init,65,MapperListener,MapperListener,self,fireLifecycleEvent(\n    AFTER_INIT_EVENT)
+2_catalina_init,66,,,return,
+2_catalina_init,69,Services,Connectors,call,init()
+2_catalina_init,71,Connectors,Connectors,self,fireLifecycleEvent(\n    BEFORE_INIT_EVENT)
+2_catalina_init,73,Connectors,Connectors,self,initInternal()
+2_catalina_init,75,Connectors,CoyoteAdapter,create,
+2_catalina_init,77,Connectors,Protocol,call,setAdapter()
+2_catalina_init,78,,,return,
+2_catalina_init,80,Connectors,Protocol,call,init()
+2_catalina_init,81,,,return,
+2_catalina_init,83,,,return,
+2_catalina_init,86,Connectors,Connectors,self,fireLifecycleEvent(\n    AFTER_INIT_EVENT)
+2_catalina_init,88,,,return,
+2_catalina_init,90,,,return,
+2_catalina_init,93,Services,Services,self,fireLifecycleEvent(\n    AFTER_INIT_EVENT)
+2_catalina_init,95,,,return,
+2_catalina_init,97,,,return,
+2_catalina_init,100,Server,Server,self,fireLifecycleEvent(\n    AFTER_INIT_EVENT)
+2_catalina_init,102,,,return,
+3_catalina_start_1,23,Catalina,Server,call,start()
+3_catalina_start_1,25,Server,Server,self,fireLifecycleEvent(\n    BEFORE_START_EVENT)
+3_catalina_start_1,27,Server,Server,self,startInternal()
+3_catalina_start_1,29,Server,Server,self,fireLifecycleEvent(\n    CONFIGURE_START_EVENT)
+3_catalina_start_1,30,Server,Server,self,fireLifecycleEvent(\n    START_EVENT)
+3_catalina_start_1,32,Server,GNR,call,start()
+3_catalina_start_1,34,GNR,GNR,self,fireLifecycleEvent(\n    BEFORE_START_EVENT)
+3_catalina_start_1,35,GNR,GNR,self,startInternal()
+3_catalina_start_1,37,GNR,GNR,self,fireLifecycleEvent(\n    CONFIGURE_START_EVENT)
+3_catalina_start_1,38,GNR,GNR,self,fireLifecycleEvent(\n    START_EVENT)
+3_catalina_start_1,40,,,return,
+3_catalina_start_1,42,GNR,GNR,self,fireLifecycleEvent(\n    AFTER_START_EVENT)
+3_catalina_start_1,44,,,return,
+3_catalina_start_1,47,Server,Services,call,start()
+3_catalina_start_1,49,Services,Services,self,fireLifecycleEvent(\n    BEFORE_START_EVENT)
+3_catalina_start_1,51,Services,Services,self,startInternal()
+3_catalina_start_1,53,Services,Services,self,fireLifecycleEvent(\n    START_EVENT)
+3_catalina_start_1,55,Services,Engine,call,start()
+3_catalina_start_1,58,Engine,Engine,self,fireLifecycleEvent(\n    BEFORE_START_EVENT)
+3_catalina_start_1,60,Engine,Engine,self,startInternal()
+3_catalina_start_1,62,Engine,Engine,self,fireLifecycleEvent(\n    START_EVENT)
+3_catalina_start_1,64,,,return,
+3_catalina_start_1,67,Engine,Engine,self,fireLifecycleEvent(\n    AFTER_START_EVENT)
+3_catalina_start_1,70,,,return,
+3_catalina_start_1,73,Services,Executors,call,start()
+3_catalina_start_1,74,Executors,Executors,self,fireLifecycleEvent(\n    BEFORE_START_EVENT)
+3_catalina_start_1,75,Executors,Executors,self,startInternal()
+3_catalina_start_1,76,Executors,Executors,self,fireLifecycleEvent(\n    START_EVENT)
+3_catalina_start_1,77,,,return,
+3_catalina_start_1,79,Executors,Executors,self,fireLifecycleEvent(\n    AFTER_START_EVENT)
+3_catalina_start_1,80,,,return,
+3_catalina_start_1,83,Services,MapperListener,call,start()
+3_catalina_start_1,84,MapperListener,MapperListener,self,fireLifecycleEvent(\n    BEFORE_START_EVENT)
+3_catalina_start_1,85,MapperListener,MapperListener,self,startInternal()
+3_catalina_start_1,86,MapperListener,MapperListener,self,fireLifecycleEvent(\n    START_EVENT)
+3_catalina_start_1,87,,,return,
+3_catalina_start_1,89,MapperListener,MapperListener,self,fireLifecycleEvent(\n    AFTER_START_EVENT)
+3_catalina_start_1,90,,,return,
+3_catalina_start_1,93,Services,Connectors,call,start()
+3_catalina_start_1,94,Connectors,Connectors,self,fireLifecycleEvent(\n    BEFORE_START_EVENT)
+3_catalina_start_1,95,Connectors,Connectors,self,startInternal()
+3_catalina_start_1,96,Connectors,Connectors,self,fireLifecycleEvent(\n    START_EVENT)
+3_catalina_start_1,97,Connectors,Protocol,call,start()
+3_catalina_start_1,98,,,return,
+3_catalina_start_1,99,,,return,
+3_catalina_start_1,101,Connectors,Connectors,self,fireLifecycleEvent(\n    AFTER_INIT_EVENT)
+3_catalina_start_1,103,,,return,
+3_catalina_start_1,105,,,return,
+3_catalina_start_1,108,Services,Services,self,fireLifecycleEvent(\n    AFTER_START_EVENT)
+3_catalina_start_1,110,,,return,
+3_catalina_start_1,112,,,return,
+3_catalina_start_1,115,Server,Server,self,fireLifecycleEvent(\n    AFTER_START_EVENT)
+3_catalina_start_1,117,,,return,
+4_catalina_start_2,23,Container,Container,self,fireLifecycleEvent(\n    BEFORE_START_EVENT)
+4_catalina_start_2,25,Container,Container,self,startInternal()
+4_catalina_start_2,27,Container,Cluster,call,start()
+4_catalina_start_2,28,Cluster,Cluster,self,fireLifecycleEvent(\n    BEFORE_START_EVENT)
+4_catalina_start_2,29,Cluster,Cluster,self,startInternal()
+4_catalina_start_2,30,Cluster,Cluster,self,fireLifecycleEvent(\n    START_EVENT)
+4_catalina_start_2,31,,,return,
+4_catalina_start_2,33,Cluster,Cluster,self,fireLifecycleEvent(\n    AFTER_START_EVENT)
+4_catalina_start_2,34,,,return,
+4_catalina_start_2,36,Container,Realm,call,start()
+4_catalina_start_2,37,Realm,Realm,self,fireLifecycleEvent(\n    BEFORE_START_EVENT)
+4_catalina_start_2,38,Realm,Realm,self,startInternal()
+4_catalina_start_2,39,Realm,Realm,self,fireLifecycleEvent(\n    START_EVENT)
+4_catalina_start_2,40,,,return,
+4_catalina_start_2,42,Realm,Realm,self,fireLifecycleEvent(\n    AFTER_START_EVENT)
+4_catalina_start_2,43,,,return,
+4_catalina_start_2,46,Container,Child,call,start()
+4_catalina_start_2,59,,,return,
+4_catalina_start_2,62,Container,Pipeline,call,start()
+4_catalina_start_2,63,Pipeline,Pipeline,self,fireLifecycleEvent(\n    BEFORE_START_EVENT)
+4_catalina_start_2,64,Pipeline,Pipeline,self,startInternal()
+4_catalina_start_2,67,Pipeline,Valve,call,start()
+4_catalina_start_2,68,Valve,Valve,self,fireLifecycleEvent(\n    BEFORE_START_EVENT)
+4_catalina_start_2,69,Valve,Valve,self,startInternal()
+4_catalina_start_2,70,Valve,Valve,self,fireLifecycleEvent(\n    START_EVENT)
+4_catalina_start_2,71,,,return,
+4_catalina_start_2,73,Valve,Valve,self,fireLifecycleEvent(\n    AFTER_START_EVENT)
+4_catalina_start_2,74,,,return,
+4_catalina_start_2,77,Pipeline,Pipeline,self,fireLifecycleEvent(\n    START_EVENT)
+4_catalina_start_2,78,,,return,
+4_catalina_start_2,80,Pipeline,Pipeline,self,fireLifecycleEvent(\n    AFTER_START_EVENT)
+4_catalina_start_2,81,,,return,
+4_catalina_start_2,83,Container,Container,self,fireLifecycleEvent(\n    START_EVENT)
+4_catalina_start_2,86,Container,UtilityExecutor,call,scheduleWithFixedDelay()
+4_catalina_start_2,87,UtilityExecutor,ContainerBackgroundProcessor,create,
+4_catalina_start_2,93,,,return,
+4_catalina_start_2,97,Container,Container,self,fireLifecycleEvent(\n    AFTER_START_EVENT)
+4_catalina_start_2,99,,,return,
+5_catalina_start_3,23,Host,Context,call,start()
+5_catalina_start_3,25,Context,Context,self,fireLifecycleEvent(\n    BEFORE_START_EVENT)
+5_catalina_start_3,27,Context,Context,self,startInternal()
+5_catalina_start_3,29,Context,NamingResourcesImpl,call,start()
+5_catalina_start_3,30,NamingResourcesImpl,NamingResourcesImpl,self,fireLifecycleEvent(\n    BEFORE_START_EVENT)
+5_catalina_start_3,31,NamingResourcesImpl,NamingResourcesImpl,self,startInternal()
+5_catalina_start_3,32,NamingResourcesImpl,NamingResourcesImpl,self,fireLifecycleEvent(\n    START_EVENT)
+5_catalina_start_3,33,,,return,
+5_catalina_start_3,35,NamingResourcesImpl,NamingResourcesImpl,self,fireLifecycleEvent(\n    AFTER_START_EVENT)
+5_catalina_start_3,36,,,return,
+5_catalina_start_3,38,Context,Context,self,postWorkDirectory()
+5_catalina_start_3,40,Context,StandardRoot,create,
+5_catalina_start_3,42,Context,StandardRoot,call,start()
+5_catalina_start_3,43,StandardRoot,StandardRoot,self,fireLifecycleEvent(\n    BEFORE_START_EVENT)
+5_catalina_start_3,44,StandardRoot,StandardRoot,self,startInternal()
+5_catalina_start_3,45,StandardRoot,StandardRoot,self,fireLifecycleEvent(\n    START_EVENT)
+5_catalina_start_3,46,,,return,
+5_catalina_start_3,48,StandardRoot,StandardRoot,self,fireLifecycleEvent(\n    AFTER_START_EVENT)
+5_catalina_start_3,49,,,return,
+5_catalina_start_3,51,Context,WebappLoader,create,
+5_catalina_start_3,52,Context,CookieProcessor,create,
+5_catalina_start_3,53,Context,CharsetMapper,create,
+5_catalina_start_3,55,Context,WebappLoader,return,start()
+5_catalina_start_3,56,WebappLoader,WebappLoader,self,fireLifecycleEvent(\n    BEFORE_START_EVENT)
+5_catalina_start_3,57,WebappLoader,WebappLoader,self,startInternal()
+5_catalina_start_3,58,WebappLoader,WebappLoader,self,fireLifecycleEvent(\n    START_EVENT)
+5_catalina_start_3,59,,,return,
+5_catalina_start_3,61,WebappLoader,WebappLoader,self,fireLifecycleEvent(\n    AFTER_START_EVENT)
+5_catalina_start_3,62,,,return,
+5_catalina_start_3,64,Context,Realm,call,start()
+5_catalina_start_3,65,Realm,Realm,self,fireLifecycleEvent(\n    BEFORE_START_EVENT)
+5_catalina_start_3,66,Realm,Realm,self,startInternal()
+5_catalina_start_3,67,Realm,Realm,self,fireLifecycleEvent(\n    START_EVENT)
+5_catalina_start_3,68,,,return,
+5_catalina_start_3,70,Realm,Realm,self,fireLifecycleEvent(\n    AFTER_START_EVENT)
+5_catalina_start_3,71,,,return,
+5_catalina_start_3,73,Context,Context,self,fireLifecycleEvent(\n    CONFIGURE_START_EVENT)
+5_catalina_start_3,76,Context,Wrapper,call,start()
+5_catalina_start_3,77,Wrapper,Wrapper,self,fireLifecycleEvent(\n    BEFORE_START_EVENT)
+5_catalina_start_3,78,Wrapper,Wrapper,self,startInternal()
+5_catalina_start_3,79,Wrapper,Wrapper,self,fireLifecycleEvent(\n    START_EVENT)
+5_catalina_start_3,80,,,return,
+5_catalina_start_3,82,Wrapper,Wrapper,self,fireLifecycleEvent(\n    AFTER_START_EVENT)
+5_catalina_start_3,83,,,return,
+5_catalina_start_3,86,Context,Pipeline,call,start()
+5_catalina_start_3,87,Pipeline,Pipeline,self,fireLifecycleEvent(\n    BEFORE_START_EVENT)
+5_catalina_start_3,88,Pipeline,Pipeline,self,startInternal()
+5_catalina_start_3,91,Pipeline,Valve,call,start()
+5_catalina_start_3,92,Valve,Valve,self,fireLifecycleEvent(\n    BEFORE_START_EVENT)
+5_catalina_start_3,93,Valve,Valve,self,startInternal()
+5_catalina_start_3,94,Valve,Valve,self,fireLifecycleEvent(\n    START_EVENT)
+5_catalina_start_3,95,,,return,
+5_catalina_start_3,97,Valve,Valve,self,fireLifecycleEvent(\n    AFTER_START_EVENT)
+5_catalina_start_3,98,,,return,
+5_catalina_start_3,101,Pipeline,Pipeline,self,fireLifecycleEvent(\n    START_EVENT)
+5_catalina_start_3,102,,,return,
+5_catalina_start_3,104,Pipeline,Pipeline,self,fireLifecycleEvent(\n    AFTER_START_EVENT)
+5_catalina_start_3,105,,,return,
+5_catalina_start_3,108,Context,Manager,create,
+5_catalina_start_3,109,Context,Cluster,call,registerManager()
+5_catalina_start_3,110,,,return,
+5_catalina_start_3,113,Context,SCI,call,onStartUp
+5_catalina_start_3,114,,,return,
+5_catalina_start_3,117,Context,Context,self,listenerStart()
+5_catalina_start_3,119,Context,Manager,call,start()
+5_catalina_start_3,120,Manager,Manager,self,fireLifecycleEvent(\n    BEFORE_START_EVENT)
+5_catalina_start_3,121,Manager,Manager,self,startInternal()
+5_catalina_start_3,122,Manager,Manager,self,fireLifecycleEvent(\n    START_EVENT)
+5_catalina_start_3,123,,,return,
+5_catalina_start_3,125,Manager,Manager,self,fireLifecycleEvent(\n    AFTER_START_EVENT)
+5_catalina_start_3,126,,,return,
+5_catalina_start_3,128,Context,Context,self,filterStart()
+5_catalina_start_3,130,Context,Context,self,loadOnStartup()
+5_catalina_start_3,132,Context,Context,self,fireLifecycleEvent(\n    START_EVENT)
+5_catalina_start_3,133,,,return,
+5_catalina_start_3,136,Context,Context,self,fireLifecycleEvent(\n    AFTER_START_EVENT)
+5_catalina_start_3,138,,,return,
+6_catalina_host_config,25,Host,HostConfig,call,lifecycleEvent(BEFORE_START_EVENT)
+6_catalina_host_config,27,HostConfig,HostConfig,self,beforeStart()
+6_catalina_host_config,28,,,return,
+6_catalina_host_config,30,,,return,
+6_catalina_host_config,34,Host,HostConfig,call,lifecycleEvent(START_EVENT)
+6_catalina_host_config,36,HostConfig,HostConfig,self,start()
+6_catalina_host_config,38,HostConfig,HostConfig,self,deployApps()
+6_catalina_host_config,41,HostConfig,HostConfig,self,migrateLegacyApps()
+6_catalina_host_config,42,,,return,
+6_catalina_host_config,45,HostConfig,HostConfig,self,deployDescriptors()
+6_catalina_host_config,46,,,return,
+6_catalina_host_config,49,HostConfig,HostConfig,self,deployWARs()
+6_catalina_host_config,50,,,return,
+6_catalina_host_config,53,HostConfig,HostConfig,self,deployDirectories()
+6_catalina_host_config,54,,,return,
+6_catalina_host_config,56,,,return,
+6_catalina_host_config,58,,,return,
+6_catalina_host_config,60,,,return,
+6_catalina_host_config,64,Host,HostConfig,call,lifecycleEvent(PERIODIC_EVENT)
+6_catalina_host_config,66,HostConfig,HostConfig,self,check()
+6_catalina_host_config,69,HostConfig,DeployedApplication,call,checkResources()
+6_catalina_host_config,76,,,return,
+6_catalina_host_config,79,HostConfig,HostConfig,self,deployApps()
+6_catalina_host_config,84,,,return,
+6_catalina_host_config,86,,,return,
+6_catalina_host_config,88,,,return,
+7_catalina_context_config,25,Context,ContextConfig,call,lifecycleEvent(BEFORE_START_EVENT)
+7_catalina_context_config,27,ContextConfig,ContextConfig,self,beforeStart()
+7_catalina_context_config,29,ContextConfig,ContextConfig,self,fixDocBase()
+7_catalina_context_config,31,ContextConfig,ContextConfig,self,antiLocking()
+7_catalina_context_config,33,,,return,
+7_catalina_context_config,35,,,return,
+7_catalina_context_config,39,Context,ContextConfig,call,lifecycleEvent(CONFIGURE_START_EVENT)
+7_catalina_context_config,41,ContextConfig,ContextConfig,self,configureStart()
+7_catalina_context_config,43,ContextConfig,ContextConfig,self,webConfig()
+7_catalina_context_config,45,ContextConfig,WebXmlParser,create,
+7_catalina_context_config,47,ContextConfig,ContextConfig,self,getDefaultWebXmlFragment()
+7_catalina_context_config,49,ContextConfig,WebXmlParser,call,parseWebXml(defaultWebXml)
+7_catalina_context_config,50,,,return,
+7_catalina_context_config,52,,,return,
+7_catalina_context_config,54,ContextConfig,ContextConfig,self,getTomcatWebXmlFragment()
+7_catalina_context_config,56,ContextConfig,WebXmlParser,call,parseWebXml(tomcatWebXml)
+7_catalina_context_config,57,,,return,
+7_catalina_context_config,59,,,return,
+7_catalina_context_config,61,ContextConfig,WebXml,create,
+7_catalina_context_config,63,ContextConfig,WebXmlParser,call,parseWebXml(contextWebXml)
+7_catalina_context_config,64,WebXmlParser,WebXml,call,
+7_catalina_context_config,65,,,return,
+7_catalina_context_config,66,,,return,
+7_catalina_context_config,68,ContextConfig,ContextConfig,self,processJarsForWebFragments()
+7_catalina_context_config,69,ContextConfig,ContextConfig,self,processServletContainerInitializers()
+7_catalina_context_config,70,ContextConfig,ContextConfig,self,processClasses()
+7_catalina_context_config,72,ContextConfig,WebXml,call,merge(orderedFragments)
+7_catalina_context_config,73,,,return,
+7_catalina_context_config,75,ContextConfig,WebXml,call,merge(tomcatWebXml)
+7_catalina_context_config,76,,,return,
+7_catalina_context_config,78,ContextConfig,WebXml,call,merge(defaultWebXml)
+7_catalina_context_config,79,,,return,
+7_catalina_context_config,81,ContextConfig,ContextConfig,self,convertJsps()
+7_catalina_context_config,82,ContextConfig,ContextConfig,self,configureContext()
+7_catalina_context_config,83,ContextConfig,ContextConfig,self,processResourceJARs()
+7_catalina_context_config,85,,,return,
+7_catalina_context_config,88,ContextConfig,ContextConfig,self,applicationAnnotationsConfig()
+7_catalina_context_config,90,ContextConfig,ContextConfig,self,validateSecurityRoles()
+7_catalina_context_config,92,ContextConfig,ContextConfig,self,authenticatorConfig()
+7_catalina_context_config,94,,,return,
+7_catalina_context_config,98,,,return,
+7_catalina_context_config,102,Context,ContextConfig,call,lifecycleEvent(AFTER_START_EVENT)
+7_catalina_context_config,104,ContextConfig,Context,call,setDocBase(originalDocBase)
+7_catalina_context_config,105,,,return,
+7_catalina_context_config,107,,,return,
+11_nio,31,Acceptor,NioEndpoint,call,serverSocketAccept()
+11_nio,32,NioEndpoint,ServerSocket,call,accept()
+11_nio,38,ServerSocket,SocketChannel,create,
+11_nio,39,,,return,
+11_nio,40,,,return,
+11_nio,42,Acceptor,NioEndpoint,call,setSocketOptions()
+11_nio,43,NioEndpoint,Poller,call,register()
+11_nio,44,,,return,
+11_nio,45,,,return,
+11_nio,49,Poller,Poller,self,events()
+11_nio,50,Poller,SocketChannel,call,register(OP_READ)
+11_nio,51,,,return,
+11_nio,52,,,return,
+11_nio,54,Poller,Selector,call,select()
+11_nio,55,,,return,
+11_nio,57,Poller,Poller,self,processKey()
+11_nio,58,Poller,NioEndpoint,call,processSocket()
+11_nio,59,NioEndpoint,NioEndpoint,self,createSocketProcessor()
+11_nio,60,NioEndpoint,SocketProcessor,create,
+11_nio,61,NioEndpoint,Executor,call,execute()
+11_nio,62,Executor,Worker,call,run()
+11_nio,63,,,return,
+11_nio,64,,,return,
+11_nio,65,,,return,
+11_nio,66,,,return,
+11_nio,67,,,return,
+11_nio,70,Worker,SocketProcessor,call,run()
+11_nio,71,SocketProcessor,SocketChannel,call,handshake()
+11_nio,75,,,return,
+11_nio,76,SocketProcessor,ConnectionHandler,call,process()
+11_nio,77,ConnectionHandler,Protocol,call,createProcessor()
+11_nio,78,Protocol,Processor,create,
+11_nio,80,Processor,CoyoteRequest,create,
+11_nio,81,Processor,CoyoteResponse,create,
+11_nio,82,,,return,
+11_nio,83,,,return,
+11_nio,84,ConnectionHandler,Processor,call,process()
+11_nio,85,Processor,Processor,self,service()
+11_nio,92,,,return,
+11_nio,93,,,return,
+11_nio,94,,,return,
+11_nio,95,,,return,
+21_http11,23,Processor,InputBuffer,call,parseRequestLine()
+21_http11,24,,,return,
+21_http11,25,Processor,Processor,self,prepareRequestProtocol()
+21_http11,26,,,return,
+21_http11,27,Processor,InputBuffer,call,parseHeaders()
+21_http11,28,,,return,
+21_http11,29,Processor,Processor,self,prepareRequest()
+21_http11,30,,,return,
+21_http11,31,Processor,CoyoteAdapter,call,service()
+21_http11,36,,,return,
+31_synchronous,25,CoyoteAdapter,Connector,call,createRequest()
+31_synchronous,26,,,return,
+31_synchronous,28,CoyoteAdapter,Connector,call,createResponse()
+31_synchronous,29,,,return,
+31_synchronous,31,CoyoteAdapter,Request,call,setRequest()
+31_synchronous,32,,,return,
+31_synchronous,33,CoyoteAdapter,Response,call,setResponse()
+31_synchronous,34,,,return,
+31_synchronous,35,CoyoteAdapter,CoyoteRequest,call,setNote()
+31_synchronous,36,,,return,
+31_synchronous,37,CoyoteAdapter,CoyoteResponse,call,setNote()
+31_synchronous,38,,,return,
+31_synchronous,40,CoyoteAdapter,CoyoteAdapter,self,postParseRequest()
+31_synchronous,41,,,return,
+31_synchronous,43,CoyoteAdapter,Connector,call,getService()
+31_synchronous,44,,,return,
+31_synchronous,45,CoyoteAdapter,Service,call,getContainer()
+31_synchronous,46,,,return,
+31_synchronous,47,CoyoteAdapter,Engine,call,getPipeline()
+31_synchronous,48,,,return,
+31_synchronous,49,CoyoteAdapter,StandardPipeline\n(Engine),call,getFirst()
+31_synchronous,50,,,return,
+31_synchronous,51,CoyoteAdapter,StandardEngineValve,call,invoke()
+31_synchronous,52,StandardEngineValve,Request,call,getHost()
+31_synchronous,53,,,return,
+31_synchronous,54,StandardEngineValve,Host,call,getPipeline()
+31_synchronous,55,,,return,
+31_synchronous,56,StandardEngineValve,StandardPipeline\n(Host),call,getFirst()
+31_synchronous,57,,,return,
+31_synchronous,58,StandardEngineValve,AccessLogValve,call,invoke()
+31_synchronous,59,AccessLogValve,AccessLogValve,self,getNext()
+31_synchronous,60,,,return,
+31_synchronous,61,AccessLogValve,ErrorReportValve,call,invoke()
+31_synchronous,62,ErrorReportValve,ErrorReportValve,self,getNext()
+31_synchronous,63,,,return,
+31_synchronous,64,ErrorReportValve,StandardHostValve,call,invoke()
+31_synchronous,65,StandardHostValve,Request,call,getContext()
+31_synchronous,66,,,return,
+31_synchronous,67,StandardHostValve,Context,call,bind()
+31_synchronous,68,,,return,
+31_synchronous,69,StandardHostValve,Context,call,getPipeline()
+31_synchronous,70,,,return,
+31_synchronous,71,StandardHostValve,StandardPipeline\n(Context),call,getFirst()
+31_synchronous,72,,,return,
+31_synchronous,73,StandardHostValve,StandardContextValve,call,invoke()
+31_synchronous,74,StandardContextValve,Request,call,getWrapper()
+31_synchronous,75,,,return,
+31_synchronous,76,StandardContextValve,Wrapper,call,getPipeline()
+31_synchronous,77,,,return,
+31_synchronous,78,StandardContextValve,StandardPipeline\n(Wrapper),call,getFirst()
+31_synchronous,79,,,return,
+31_synchronous,80,StandardContextValve,StandardWrapperValve,call,invoke()
+31_synchronous,81,StandardWrapperValve,Wrapper,call,allocate()
+31_synchronous,82,,,return,
+31_synchronous,83,StandardWrapperValve,ApplicationFilterFactory,call,createFilterChain
+31_synchronous,84,ApplicationFilterFactory,FilterChain,create,
+31_synchronous,85,,,return,
+31_synchronous,86,StandardWrapperValve,FilterChain,call,doFilter()
+31_synchronous,87,FilterChain,Filter\nA,call,doFilter()
+31_synchronous,88,Filter\nA,FilterChain,call,doFilter()
+31_synchronous,89,FilterChain,Filter\nB,call,doFilter()
+31_synchronous,90,Filter\nB,FilterChain,call,doFilter()
+31_synchronous,91,FilterChain,Servlet,call,service()
+31_synchronous,93,,,return,
+31_synchronous,94,,,return,
+31_synchronous,95,,,return,
+31_synchronous,96,,,return,
+31_synchronous,97,,,return,
+31_synchronous,98,,,return,
+31_synchronous,99,StandardWrapperValve,FilterChain,call,release()
+31_synchronous,100,,,return,
+31_synchronous,101,StandardWrapperValve,Wrapper,call,deallocate()
+31_synchronous,102,,,return,
+31_synchronous,103,,,return,
+31_synchronous,104,,,return,
+31_synchronous,105,,,return,
+31_synchronous,106,,,return,
+31_synchronous,107,,,return,
+31_synchronous,108,,,return,
+41_basic,26,ErrorReportValve,StandardHostValve,call,invoke()
+41_basic,27,StandardHostValve,Request,call,getContext()
+41_basic,28,,,return,
+41_basic,29,StandardHostValve,Context,call,bind()
+41_basic,30,,,return,
+41_basic,31,StandardHostValve,Context,call,getPipeline()
+41_basic,32,,,return,
+41_basic,33,StandardHostValve,StandardPipeline\n(Context),call,getFirst()
+41_basic,34,,,return,
+41_basic,35,StandardHostValve,BasicAuthenticator,call,invoke()
+41_basic,36,BasicAuthenticator,Context,call,getRealm()
+41_basic,37,,,return,
+41_basic,38,BasicAuthenticator,LockoutRealm,call,findSecurityContraints()
+41_basic,39,,,return,
+41_basic,40,BasicAuthenticator,LockoutRealm,call,hasUserDataPermission()
+41_basic,41,,,return,
+41_basic,42,BasicAuthenticator,BasicAuthenticator,self,doAuthenticate()
+41_basic,43,BasicAuthenticator,Request,call,getCoyoteRequest()
+41_basic,44,,,return,
+41_basic,45,BasicAuthenticator,CoyoteRequest,call,getMimeHeaders()
+41_basic,46,,,return,
+41_basic,47,BasicAuthenticator,MimeHeaders,call,"getValue(""authorization"")"
+41_basic,48,,,return,
+41_basic,49,BasicAuthenticator,BasicCredentials,create,
+41_basic,50,BasicAuthenticator,BasicCredentials,call,getUserName()
+41_basic,51,,,return,
+41_basic,52,BasicAuthenticator,BasicCredentials,call,getPassword()
+41_basic,53,,,return,
+41_basic,54,BasicAuthenticator,Context,call,getRealm()
+41_basic,55,,,return,
+41_basic,56,BasicAuthenticator,LockoutRealm,call,authenticate()
+41_basic,57,LockoutRealm,UserDatabaseRealm,call,authenticate()
+41_basic,58,UserDatabaseRealm,UserDatabaseRealm,self,getPassword(username)
+41_basic,59,UserDatabaseRealm,CredentialHandler,call,matches()
+41_basic,60,,,return,
+41_basic,61,UserDatabaseRealm,UserDatabaseRealm,self,getPrincipal()
+41_basic,62,,,return,
+41_basic,63,,,return,
+41_basic,64,,,return,
+41_basic,65,,,return,
+41_basic,66,,,return,
+41_basic,67,BasicAuthenticator,Realm,call,hasResourcePermission()
+41_basic,68,,,return,
+41_basic,69,BasicAuthenticator,BasicAuthenticator,self,getNext()
+41_basic,70,,,return,
+41_basic,71,BasicAuthenticator,StandardContextValve,call,invoke()

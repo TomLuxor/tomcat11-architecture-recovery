@@ -1,0 +1,10 @@
+module,code_lines,code_lines_documented_packages,documented_packages,code_lines_documented_files,documented_files
+org.apache.catalina,105615,57456,13,20975,38
+org.apache.tomcat,86649,20131,5,5806,8
+org.apache.jasper,24817,0,0,0,0
+org.apache.coyote,16207,5943,2,3219,6
+org.apache.el,11648,0,0,0,0
+jakarta.*,10162,1297,1,14,2
+org.apache.naming,2096,0,0,0,0
+org.apache.juli,1657,0,0,0,0
+total,258851,84827,21,30014,54

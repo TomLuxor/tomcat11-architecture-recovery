@@ -1,0 +1,19 @@
+participant,type,reason
+BasicAuthenticator,org.apache.catalina.authenticator.BasicAuthenticator,Box checks a request's login in the authentication package; 
+Host,org.apache.catalina.Host,Only this candidate has getPipeline() and start() while the other Host class just parses the HTTP Host header
+Wrapper,org.apache.catalina.Wrapper,Has all four methods shown (start getPipeline allocate deallocate) while the other candidate belongs to Expression Language and is out of scope
+Request,org.apache.catalina.connector.Request,Only this candidate has all five methods shown while coyote.Request has none and the others are callback classes
+CoyoteRequest,org.apache.coyote.Request,No type is named CoyoteRequest but coyote.Request has the setNote() and getMimeHeaders() shown in the diagram
+Response,org.apache.catalina.connector.Response,Only this candidate has the setResponse() that CoyoteAdapter calls and the third candidate is out of scope
+CoyoteResponse,org.apache.coyote.Response,No type is named CoyoteResponse but coyote.Response has the setNote() shown in the diagram
+InputBuffer,org.apache.coyote.http11.Http11InputBuffer,Neither InputBuffer type has parseRequestLine() or parseHeaders() but this implementation has both
+SocketProcessor,org.apache.tomcat.util.net.NioEndpoint$SocketProcessor,Diagram 11_nio shows NioEndpoint and its Poller while Nio2Endpoint appears in no diagram
+Global Naming Resources,org.apache.catalina.deploy.NamingResourcesImpl,The globalNamingResources field of StandardServer has this type and it has the init() and start() that the Server calls
+SCI,jakarta.servlet.ServletContainerInitializer,Usual abbreviation for this Servlet API interface and it has the onStartup() that the Context calls
+Filter A,jakarta.servlet.Filter,Web application filter that Tomcat only sees through the common Filter interface with doFilter()
+Filter B,jakarta.servlet.Filter,Same interface as Filter A so the arrow between A and B becomes a self-loop but the arrows with FilterChain stay testable
+Selector,java.nio.channels.Selector,The selector field of NioEndpoint$Poller has this JDK type and the Poller calls select() on it
+ServerSocket,java.nio.channels.ServerSocketChannel,The serverSock field of NioEndpoint has this JDK type and NioEndpoint calls accept() on it
+SocketChannel,java.nio.channels.ServerSocketChannel,The serverSock field of NioEndpoint has this JDK type and NioEndpoint calls accept() on it
+UtilityExecutor,java.util.concurrent.ScheduledExecutorService,The utilityExecutorWrapper field of StandardServer has this type and the Container calls scheduleWithFixedDelay() on it
+Child,none,A child of a container is again a Container so mapping it would turn the arrow Container to Child into a self-loop that cannot be tested

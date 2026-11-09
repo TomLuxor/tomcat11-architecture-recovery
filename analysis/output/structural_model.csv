@@ -1,0 +1,6 @@
+whole,part,multiplicity_of_part,source_wording
+Server,Service,not stated,"A Service is an intermediate component which lives inside a Server"
+Service,Connector,1..*,"ties one or more Connectors to exactly one Engine"
+Service,Engine,1,"ties one or more Connectors to exactly one Engine"
+Engine,Host,*,"An Engine may contain multiple hosts"
+Host,Context,*,"A Host may contain multiple contexts"

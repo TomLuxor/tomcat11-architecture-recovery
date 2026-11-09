@@ -1,0 +1,103 @@
+algorithm,config,run,level,components,clusters,groups
+acdc,default,0,interface,6,3,Server Service Engine Host | Connector | Context
+acdc,default,0,implementation,6,3,StandardServer StandardService StandardEngine StandardContext | Connector | StandardHost
+acdc,default,1,interface,6,3,Server Service Engine Host | Connector | Context
+acdc,default,1,implementation,6,3,StandardServer StandardService StandardEngine StandardContext | Connector | StandardHost
+acdc,default,2,interface,6,3,Server Service Engine Host | Connector | Context
+acdc,default,2,implementation,6,3,StandardServer StandardService StandardEngine StandardContext | Connector | StandardHost
+acdc,default,3,interface,6,3,Server Service Engine Host | Connector | Context
+acdc,default,3,implementation,6,3,StandardServer StandardService StandardEngine StandardContext | Connector | StandardHost
+acdc,default,4,interface,6,3,Server Service Engine Host | Connector | Context
+acdc,default,4,implementation,6,3,StandardServer StandardService StandardEngine StandardContext | Connector | StandardHost
+acdc,default,5,interface,6,3,Server Service Engine Host | Connector | Context
+acdc,default,5,implementation,6,3,StandardServer StandardService StandardEngine StandardContext | Connector | StandardHost
+acdc,default,6,interface,6,3,Server Service Engine Host | Connector | Context
+acdc,default,6,implementation,6,3,StandardServer StandardService StandardEngine StandardContext | Connector | StandardHost
+acdc,default,7,interface,6,3,Server Service Engine Host | Connector | Context
+acdc,default,7,implementation,6,3,StandardServer StandardService StandardEngine StandardContext | Connector | StandardHost
+acdc,default,8,interface,6,3,Server Service Engine Host | Connector | Context
+acdc,default,8,implementation,6,3,StandardServer StandardService StandardEngine StandardContext | Connector | StandardHost
+acdc,default,9,interface,6,3,Server Service Engine Host | Connector | Context
+acdc,default,9,implementation,6,3,StandardServer StandardService StandardEngine StandardContext | Connector | StandardHost
+acdc,shuffled,0,interface,6,3,Server Service | Connector | Engine Host Context
+acdc,shuffled,0,implementation,6,3,StandardServer StandardService StandardEngine StandardContext | Connector | StandardHost
+acdc,shuffled,1,interface,6,4,Server Service | Connector | Engine Host | Context
+acdc,shuffled,1,implementation,6,3,StandardServer StandardService StandardEngine StandardContext | Connector | StandardHost
+acdc,shuffled,2,interface,6,4,Server Service | Connector | Engine Host | Context
+acdc,shuffled,2,implementation,6,3,StandardServer StandardService StandardEngine StandardContext | Connector | StandardHost
+acdc,shuffled,3,interface,6,4,Server Service | Connector | Engine Host | Context
+acdc,shuffled,3,implementation,6,3,StandardServer StandardService StandardEngine StandardContext | Connector | StandardHost
+acdc,shuffled,4,interface,6,4,Server Service Engine | Connector | Host | Context
+acdc,shuffled,4,implementation,6,3,StandardServer StandardService StandardEngine StandardContext | Connector | StandardHost
+acdc,shuffled,5,interface,6,4,Server Service Engine | Connector | Host | Context
+acdc,shuffled,5,implementation,6,3,StandardServer StandardService StandardEngine StandardContext | Connector | StandardHost
+acdc,shuffled,6,interface,6,4,Server Service Engine | Connector | Host | Context
+acdc,shuffled,6,implementation,6,3,StandardServer StandardService StandardEngine StandardContext | Connector | StandardHost
+acdc,shuffled,7,interface,6,3,Server Service Engine | Connector | Host Context
+acdc,shuffled,7,implementation,6,3,StandardServer StandardService StandardEngine StandardContext | Connector | StandardHost
+acdc,shuffled,8,interface,6,4,Server Service | Connector | Engine Host | Context
+acdc,shuffled,8,implementation,6,3,StandardServer StandardService StandardEngine StandardContext | Connector | StandardHost
+acdc,shuffled,9,interface,6,4,Server Service Engine | Connector | Host | Context
+acdc,shuffled,9,implementation,6,2,StandardServer StandardService StandardEngine StandardHost StandardContext | Connector
+leiden,gamma0.5,0,interface,6,1,Server Service Connector Engine Host Context
+leiden,gamma0.5,0,implementation,6,1,StandardServer StandardService Connector StandardEngine StandardHost StandardContext
+leiden,gamma0.5,1,interface,6,1,Server Service Connector Engine Host Context
+leiden,gamma0.5,1,implementation,6,1,StandardServer StandardService Connector StandardEngine StandardHost StandardContext
+leiden,gamma0.5,2,interface,6,1,Server Service Connector Engine Host Context
+leiden,gamma0.5,2,implementation,6,1,StandardServer StandardService Connector StandardEngine StandardHost StandardContext
+leiden,gamma0.5,3,interface,6,1,Server Service Connector Engine Host Context
+leiden,gamma0.5,3,implementation,6,1,StandardServer StandardService Connector StandardEngine StandardHost StandardContext
+leiden,gamma0.5,4,interface,6,1,Server Service Connector Engine Host Context
+leiden,gamma0.5,4,implementation,6,1,StandardServer StandardService Connector StandardEngine StandardHost StandardContext
+leiden,gamma0.5,5,interface,6,1,Server Service Connector Engine Host Context
+leiden,gamma0.5,5,implementation,6,1,StandardServer StandardService Connector StandardEngine StandardHost StandardContext
+leiden,gamma0.5,6,interface,6,2,Server Service Engine Host Context | Connector
+leiden,gamma0.5,6,implementation,6,2,StandardServer StandardService StandardEngine StandardHost StandardContext | Connector
+leiden,gamma0.5,7,interface,6,2,Server Service Engine Host Context | Connector
+leiden,gamma0.5,7,implementation,6,2,StandardServer StandardService StandardEngine StandardHost StandardContext | Connector
+leiden,gamma0.5,8,interface,6,1,Server Service Connector Engine Host Context
+leiden,gamma0.5,8,implementation,6,1,StandardServer StandardService Connector StandardEngine StandardHost StandardContext
+leiden,gamma0.5,9,interface,6,2,Server Service Engine Host Context | Connector
+leiden,gamma0.5,9,implementation,6,2,StandardServer StandardService StandardEngine StandardHost StandardContext | Connector
+leiden,gamma1,0,interface,6,2,Server Service Engine Host Context | Connector
+leiden,gamma1,0,implementation,6,2,StandardServer StandardService StandardEngine StandardHost StandardContext | Connector
+leiden,gamma1,1,interface,6,2,Server | Service Connector Engine Host Context
+leiden,gamma1,1,implementation,6,1,StandardServer StandardService Connector StandardEngine StandardHost StandardContext
+leiden,gamma1,2,interface,6,2,Server Service Engine Host Context | Connector
+leiden,gamma1,2,implementation,6,2,StandardServer StandardService StandardEngine StandardHost StandardContext | Connector
+leiden,gamma1,3,interface,6,1,Server Service Connector Engine Host Context
+leiden,gamma1,3,implementation,6,1,StandardServer StandardService Connector StandardEngine StandardHost StandardContext
+leiden,gamma1,4,interface,6,2,Server Service Engine Host Context | Connector
+leiden,gamma1,4,implementation,6,2,StandardServer StandardService StandardEngine StandardHost StandardContext | Connector
+leiden,gamma1,5,interface,6,2,Server Service Engine Host Context | Connector
+leiden,gamma1,5,implementation,6,2,StandardServer StandardService StandardEngine StandardHost StandardContext | Connector
+leiden,gamma1,6,interface,6,2,Server Service Engine Host Context | Connector
+leiden,gamma1,6,implementation,6,2,StandardServer StandardService StandardEngine StandardHost StandardContext | Connector
+leiden,gamma1,7,interface,6,2,Server Service Engine Host Context | Connector
+leiden,gamma1,7,implementation,6,2,StandardServer StandardService StandardEngine StandardHost StandardContext | Connector
+leiden,gamma1,8,interface,6,2,Server Service Engine Host Context | Connector
+leiden,gamma1,8,implementation,6,2,StandardServer StandardService StandardEngine StandardHost StandardContext | Connector
+leiden,gamma1,9,interface,6,1,Server Service Connector Engine Host Context
+leiden,gamma1,9,implementation,6,2,StandardServer StandardService Connector StandardEngine StandardHost | StandardContext
+leiden,gamma2,0,interface,6,3,Server Service Engine Host | Connector | Context
+leiden,gamma2,0,implementation,6,3,StandardServer StandardService StandardEngine StandardHost | Connector | StandardContext
+leiden,gamma2,1,interface,6,3,Server Service Connector Engine | Host | Context
+leiden,gamma2,1,implementation,6,2,StandardServer StandardService Connector StandardEngine StandardHost | StandardContext
+leiden,gamma2,2,interface,6,2,Server Service Connector Engine Host | Context
+leiden,gamma2,2,implementation,6,2,StandardServer StandardService Connector StandardEngine StandardHost | StandardContext
+leiden,gamma2,3,interface,6,3,Server Service Connector | Engine Host | Context
+leiden,gamma2,3,implementation,6,3,StandardServer StandardService Connector | StandardEngine StandardHost | StandardContext
+leiden,gamma2,4,interface,6,4,Server | Service Engine Host | Connector | Context
+leiden,gamma2,4,implementation,6,3,StandardServer StandardService StandardEngine StandardHost | Connector | StandardContext
+leiden,gamma2,5,interface,6,3,Server Service Connector | Engine Host | Context
+leiden,gamma2,5,implementation,6,3,StandardServer | StandardService Connector | StandardEngine StandardHost StandardContext
+leiden,gamma2,6,interface,6,3,Server Service Connector | Engine Host | Context
+leiden,gamma2,6,implementation,6,2,StandardServer StandardService Connector | StandardEngine StandardHost StandardContext
+leiden,gamma2,7,interface,6,2,Server Service Connector Engine Host | Context
+leiden,gamma2,7,implementation,6,2,StandardServer StandardService Connector StandardEngine StandardHost | StandardContext
+leiden,gamma2,8,interface,6,4,Server Service Engine | Connector | Host | Context
+leiden,gamma2,8,implementation,6,3,StandardServer StandardService StandardEngine StandardHost | Connector | StandardContext
+leiden,gamma2,9,interface,6,3,Server Service Connector | Engine Host | Context
+leiden,gamma2,9,implementation,6,3,StandardServer StandardService Connector | StandardEngine StandardHost | StandardContext
+packages,packages,0,interface,6,2,Server Service Engine Host Context | Connector
+packages,packages,0,implementation,6,2,StandardServer StandardService StandardEngine StandardHost StandardContext | Connector

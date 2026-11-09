@@ -1,0 +1,8 @@
+category,messages,example
+interface-dispatch,15,2_catalina_init:42 Service(s) -> Engine
+chain-of-responsibility,14,31_synchronous:49 CoyoteAdapter -> StandardPipeline (Engine)
+listener-notification,6,6_catalina_host_config:25 Host -> HostConfig
+reflection,5,1_overview:24 Bootstrap -> Catalina
+inherited-call,5,5_catalina_start_3:23 Host -> Context
+thread-hand-off,2,11_nio:61 NioEndpoint -> Executor
+other: misspelled in diagram,1,41_basic:38 BasicAuthenticator -> LockoutRealm

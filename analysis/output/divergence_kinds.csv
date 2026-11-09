@@ -1,0 +1,174 @@
+level,from,to,kind,direction,methods
+interface,AccessLogValve,Container,accessor,same,getCatalinaBase
+interface,ApplicationFilterFactory,Request,accessor,same,getFilterChain setFilterChain
+interface,ApplicationFilterFactory,Wrapper,accessor,same,getName getParent isAsyncSupported
+interface,Catalina,Bootstrap,accessor,same,getCatalinaBase getCatalinaBaseFile getCatalinaHomeFile
+interface,ConnectionHandler,CoyoteRequest,accessor,same,getRequestProcessor
+interface,Connector | Connector(s),Executor(s),accessor,same,getName
+interface,Connector | Connector(s),Request,creation,same,<init>
+interface,Connector | Connector(s),Response,creation,same,<init>
+interface,Connector | Connector(s),Server,accessor,same,getUtilityExecutor
+interface,Connector | Connector(s),Service | Service(s),accessor,same,getDomain getServer removeConnector
+interface,Container,Engine,accessor,same,getService
+interface,Container,Host,accessor,same,getXmlBase
+interface,ContainerBackgroundProcessor,Container,other,same,backgroundProcess findChildren getBackgroundProcessorDelay
+interface,ContainerBackgroundProcessor,Context,other,same,bind getLoader unbind
+interface,ContextConfig,Catalina,accessor,same,getGenerateCode getGeneratedCodeLocation getGeneratedCodePackage getUseGeneratedCode
+interface,ContextConfig,Container,accessor,same,getConfigPath getName getParent getService
+interface,ContextConfig,Digester,other,n/a,<init> addGeneratedClass addRuleSet endGeneratingCode getGeneratedCode getParser loadGeneratedClass parse push setClassLoader setErrorHandler setFakeAttributes setKnown setRulesValidation setUseContextClassLoader setValidating startGeneratingCode toVariableName
+interface,ContextConfig,Engine,accessor,same,getService
+interface,ContextConfig,Global Naming Resources | NamingResourcesImpl,accessor,same,addEjb addEnvironment addLocalEjb addMessageDestinationRef addResource addResourceEnvRef addService
+interface,ContextConfig,Host,accessor,same,addLifecycleListener getAppBaseFile getConfigBaseFile getName getParent getPipeline getXmlBase
+interface,ContextConfig,Pipeline,accessor,same,addValve getValves
+interface,ContextConfig,Server,accessor,same,getCatalina getState getUtilityExecutor
+interface,ContextConfig,Service | Service(s),accessor,same,getServer
+interface,ContextConfig,Valve,accessor,same,getClass
+interface,ContextConfig,Wrapper,accessor,same,addInitParameter addSecurityReference findInitParameter findInitParameters findSecurityReference findSecurityReferences getRunAs setAsyncSupported setEnabled setLoadOnStartup setMultipartConfigElement setName setOverridable setRunAs setServletClass
+interface,CoyoteAdapter,Context,other,same,bind equals getAuthenticator getManager getPaused getRealm getServletContext getWebappVersion logAccess unbind
+interface,CoyoteAdapter,Host,other,same,logAccess
+interface,CoyoteAdapter,Manager,accessor,same,findSession
+interface,CoyoteAdapter,Pipeline,accessor,same,getFirst isAsyncSupported
+interface,CoyoteAdapter,Realm,other,same,authenticate
+interface,CoyoteAdapter,Valve,other,same,invoke
+interface,CoyoteAdapter,Wrapper,other,same,getServletMethods incrementErrorCount
+interface,CoyoteRequest,CoyoteResponse,request-model,same,isCommitted setRequest
+interface,CoyoteRequest,MimeHeaders,request-model,n/a,<init> getHeader getUniqueValue getValue recycle setLimit toMap
+interface,CoyoteResponse,CoyoteRequest,request-model,same,isRequestThread
+interface,CoyoteResponse,MimeHeaders,request-model,n/a,<init> addValue getHeader recycle removeHeader setValue
+interface,ErrorReportValve,Container,accessor,same,getCatalinaBase getLogger
+interface,ErrorReportValve,CoyoteResponse,other,down,action
+interface,ErrorReportValve,Request,accessor,same,getAttribute getLocales isAsync isAsyncCompleting
+interface,ErrorReportValve,Response,other,same,finishResponse flushBuffer getContentWritten getCoyoteResponse getMessage getOutputStream getReporter getStatus isCommitted isError reset sendError setCharacterEncoding setContentType setErrorReported setLocale setSuspended
+interface,ErrorReportValve,Valve,inheritance,same,invoke
+interface,Global Naming Resources | NamingResourcesImpl,Container,accessor,same,getMBeanKeyProperties getService
+interface,Global Naming Resources | NamingResourcesImpl,Server,accessor,same,getGlobalNamingContext getGlobalNamingResources
+interface,Global Naming Resources | NamingResourcesImpl,Service | Service(s),accessor,same,getServer
+interface,HostConfig,Context,other,same,addLifecycleListener findWatchedResources getBaseName getDocBase getManager getName getPath getState reload setConfigFile setDocBase setName setPath setWebappVersion start
+interface,HostConfig,Digester,other,n/a,<init> addObjectCreate addSetProperties parse reset setValidating
+interface,HostConfig,Host,accessor,same,addChild findChild getAppBaseFile getAutoDeploy getCatalinaBase getConfigBaseFile getConfigClass getCreateDirs getDeployIgnorePattern getDeployOnStartup getLegacyAppBaseFile getName getObjectName getStartStopExecutor getState getUndeployOldVersions removeChild setAutoDeploy setDeployOnStartup
+interface,HostConfig,Manager,accessor,same,getActiveSessions
+interface,InputBuffer,CoyoteRequest,request-model,same,getMimeHeaders markStartTime protocol queryString recycle requestURI setMethod
+interface,Mapper Listener,Container,accessor,same,addContainerListener addLifecycleListener findChildren getName getParent getState removeContainerListener removeLifecycleListener
+interface,Mapper Listener,Context,accessor,same,findChildren findWelcomeFiles getParent getPath getPaused getResources getWebappVersion isResourceOnlyServlet
+interface,Mapper Listener,Engine,accessor,same,findChildren getDefaultHost
+interface,Mapper Listener,Host,accessor,same,findAliases findChildren getName getState
+interface,Mapper Listener,Service | Service(s),accessor,same,getContainer getDomain getMapper
+interface,Mapper Listener,Wrapper,accessor,same,findMappings getName getParent
+interface,NioEndpoint,Acceptor,other,same,getState stopMillis
+interface,Request,Connector | Connector(s),accessor,same,getAsyncTimeout getDiscardFacades getEnableLookups getEncodedSolidusHandlingInternal getMaxCookieCount getMaxLocaleCount getMaxParameterCount getMaxPartCount getMaxPartHeaderSize getMaxPostSize getURICharset getUseBodyEncodingForURI isParseBodyMethod
+interface,Request,Container,accessor,same,getParent getPipeline
+interface,Request,Context,other,same,bind findSecurityRole getAllowCasualMultipartParsing getAllowMultipleLeadingForwardSlashInPath getApplicationEventListeners getAuthenticator getCookieProcessor getCreateUploadTargets getDispatchersUseEncodedPaths getInstanceManager getLogger getManager getRealm getRequestCharacterEncoding getServletContext getSessionCookiePath getSwallowAbortedUploads getValidateClientProvidedNewSessionId unbind
+interface,Request,CookieProcessor,request-model,n/a,getCharset parseCookieHeader
+interface,Request,CoyoteRequest,request-model,down,action addPathParameter decodedURI getAttribute getAttributes getCharsetHolder getContentLength getContentLengthLong getContentType getCookies getHeader getLocalPort getMethod getMimeHeaders getParameters getPathParameter getProtocolRequestId getRemotePort getRequestId getServerPort getServletConnection getTrailerFields isFinished isTrailerFieldsReady localAddr localName peerAddr protocol queryString remoteAddr remoteHost requestURI scheme serverName setAttribute setCharsetHolder setContentType setServerPort
+interface,Request,CoyoteResponse,request-model,down,action
+interface,Request,Host,accessor,same,findChildren
+interface,Request,Manager,other,same,createSession findSession rotateSessionId
+interface,Request,MimeHeaders,request-model,n/a,names values
+interface,Request,Pipeline,accessor,same,findNonAsyncValves
+interface,Request,Realm,accessor,same,hasRole
+interface,Request,Response,request-model,same,addSessionCookieInternal getCoyoteResponse getHeader getResponse getStatus setStatus
+interface,Request,Wrapper,accessor,same,findSecurityReference getMultipartConfigElement getName getServletClass isAsyncSupported
+interface,Response,Connector | Connector(s),accessor,same,getEnforceEncodingInGetWriter
+interface,Response,Context,accessor,same,getCharset getCookieProcessor getResponseCharacterEncoding getSendRedirectBody getUseRelativeRedirects
+interface,Response,CookieProcessor,request-model,n/a,generateHeader getCharset
+interface,Response,CoyoteRequest,request-model,down,getSupportsRelativeRedirects
+interface,Response,CoyoteResponse,request-model,down,action addHeader containsHeader getBytesWritten getCharsetHolder getContentLength getContentLengthLong getContentType getLocale getMessage getMimeHeaders getStatus getTrailerFields isCommitted isError isErrorReportRequired reset resetError setCharsetHolder setContentLength setContentType setContentTypeNoCharset setError setErrorReported setHeader setLocale setMessage setStatus setTrailerFields
+interface,Response,MimeHeaders,request-model,n/a,getHeader getName getValue size values
+interface,Response,Request,request-model,same,getConnector getContext getCoyoteRequest getDecodedRequestURI getDiscardFacades getRequest getScheme getServerName getServerPort getServletContext getSessionInternal isRequestedSessionIdFromCookie
+interface,SocketProcessor,NioEndpoint,accessor,same,getHandler
+interface,StandardContextValve,Pipeline,accessor,same,getFirst isAsyncSupported
+interface,StandardContextValve,Response,other,same,sendAcknowledgement sendError
+interface,StandardContextValve,Valve,inheritance,same,invoke
+interface,StandardEngineValve,Pipeline,accessor,same,getFirst isAsyncSupported
+interface,StandardEngineValve,Response,other,same,isError sendError
+interface,StandardEngineValve,Valve,inheritance,same,invoke
+interface,StandardHostValve,Container,accessor,same,getLogger
+interface,StandardHostValve,CoyoteResponse,other,down,action
+interface,StandardHostValve,Pipeline,accessor,same,getFirst isAsyncSupported
+interface,StandardHostValve,Response,other,same,finishResponse flushBuffer getCoyoteResponse getMessage getResponse getStatus isCommitted isError isErrorReportRequired resetBuffer sendError setAppCommitted setContentLength setError setErrorReported setStatus setSuspended
+interface,StandardHostValve,Valve,inheritance,same,invoke
+interface,StandardHostValve,Wrapper,accessor,same,getName
+interface,StandardPipeline (Context) | StandardPipeline (Engine) | StandardPipeline (Host) | StandardPipeline (Wrapper),Container,other,same,fireContainerEvent
+interface,StandardPipeline (Context) | StandardPipeline (Engine) | StandardPipeline (Host) | StandardPipeline (Wrapper),Valve,accessor,same,getClass getNext isAsyncSupported setNext
+interface,StandardRoot,Context,accessor,same,getDocBase getDomain getMBeanKeyProperties getName getParent
+interface,StandardRoot,Host,accessor,same,getAppBaseFile
+interface,StandardWrapperValve,Container,accessor,same,getLogger
+interface,StandardWrapperValve,Context,accessor,same,getLogger getName getState getSwallowOutput
+interface,StandardWrapperValve,Request,accessor,same,getAsyncContextInternal getDispatcherType getRequest getRequestPathMB isAsyncDispatching setAttribute
+interface,StandardWrapperValve,Response,other,same,getResponse sendError setDateHeader setError setStatus
+interface,UserDatabaseRealm,Server,accessor,same,getGlobalNamingContext
+interface,WebappLoader,Container,accessor,same,getName
+interface,WebappLoader,Context,other,same,getDomain getName getParent getParentClassLoader getReloadable getResources getServletContext reload
+interface,WebXmlParser,Digester,other,n/a,getParser parse push reset setClassLoader setErrorHandler
+interface,Worker,Executor,other,n/a,getThreadFactory runWorker
+implementation,ApplicationFilterFactory,Context,accessor,same,findFilterConfig findFilterMaps getDispatcherWrapsSameObject
+implementation,ApplicationFilterFactory,Request,accessor,same,getFilterChain setFilterChain
+implementation,Catalina,Bootstrap,accessor,same,getCatalinaBase getCatalinaBaseFile getCatalinaHomeFile
+implementation,ConnectionHandler,CoyoteRequest,accessor,same,getRequestProcessor
+implementation,Connector | Connector(s),Request,creation,same,<init>
+implementation,Connector | Connector(s),Response,creation,same,<init>
+implementation,Container,ContainerBackgroundProcessor,creation,same,<init>
+implementation,Context,Container,inheritance,same,<init> addChild backgroundProcess destroyInternal initInternal removeChild threadStart
+implementation,Context,Host,accessor,same,getWorkDir isFailCtxIfServletStartFails
+implementation,Context,StandardContextValve,creation,same,<init>
+implementation,ContextConfig,Catalina,accessor,same,getGenerateCode getGeneratedCodeLocation getGeneratedCodePackage getUseGeneratedCode
+implementation,ContextConfig,Digester,other,n/a,<init> addGeneratedClass addRuleSet endGeneratingCode getGeneratedCode getParser loadGeneratedClass parse push setClassLoader setErrorHandler setFakeAttributes setKnown setRulesValidation setUseContextClassLoader setValidating startGeneratingCode toVariableName
+implementation,ContextConfig,Global Naming Resources | NamingResourcesImpl,accessor,same,addEjb addEnvironment addLocalEjb addMessageDestinationRef addResource addResourceEnvRef addService
+implementation,ContextConfig,Host,accessor,same,isUnpackWARs
+implementation,CookieProcessor,MimeHeaders,request-model,n/a,findHeader getValue
+implementation,CoyoteRequest,CoyoteResponse,request-model,same,isCommitted setRequest
+implementation,CoyoteRequest,MimeHeaders,request-model,n/a,<init> getHeader getUniqueValue getValue recycle setLimit toMap
+implementation,CoyoteResponse,CoyoteRequest,request-model,same,isRequestThread
+implementation,CoyoteResponse,MimeHeaders,request-model,n/a,<init> addValue getHeader recycle removeHeader setValue
+implementation,Engine,Container,inheritance,same,<init> addChild getCatalinaBase getCatalinaHome getRealm initInternal startInternal
+implementation,Engine,StandardEngineValve,creation,same,<init>
+implementation,ErrorReportValve,CoyoteResponse,other,down,action
+implementation,ErrorReportValve,Request,accessor,same,getAttribute getLocales isAsync isAsyncCompleting
+implementation,ErrorReportValve,Response,other,same,finishResponse flushBuffer getContentWritten getCoyoteResponse getMessage getOutputStream getReporter getStatus isCommitted isError reset sendError setCharacterEncoding setContentType setErrorReported setLocale setSuspended
+implementation,ErrorReportValve,Valve,inheritance,same,<init>
+implementation,Executor(s),Executor,other,n/a,<init> awaitTermination contextStopping execute getActiveCount getCompletedTaskCount getCorePoolSize getLargestPoolSize getPoolSize getQueue isShutdown isTerminated setCorePoolSize setKeepAliveTime setMaximumPoolSize setThreadRenewalDelay shutdownNow
+implementation,Host,Container,inheritance,same,<init> addChild startInternal
+implementation,Host,ErrorReportValve,creation,same,<init>
+implementation,Host,StandardHostValve,creation,same,<init>
+implementation,HostConfig,Context,accessor,same,getCopyXML getUnpackWAR
+implementation,HostConfig,Digester,other,n/a,<init> addObjectCreate addSetProperties parse reset setValidating
+implementation,HostConfig,Host,accessor,same,getContextClass isCopyXML isDeployXML isUnpackWARs
+implementation,InputBuffer,CoyoteRequest,request-model,same,getMimeHeaders markStartTime protocol queryString recycle requestURI setMethod
+implementation,NioEndpoint,Acceptor,other,same,getState stopMillis
+implementation,Processor,MimeHeaders,other,n/a,addValue duplicate getName getUniqueValue getValue removeHeader setLimit setValue size values
+implementation,Protocol,NioEndpoint,accessor,down,<init> getPollerThreadPriority getSelectorTimeout setPollerThreadPriority setSelectorTimeout
+implementation,Realm,Connector | Connector(s),accessor,same,getRedirectPortWithOffset
+implementation,Realm,CredentialHandler,accessor,same,<init> getAlgorithm getEncoding
+implementation,Realm,Request,accessor,same,getConnector getContext getMethod getPrincipal getQueryString getRequest getRequestPathMB getRequestURI getRequestedSessionId getServerName getWrapper isRequestedSessionIdFromURL
+implementation,Realm,Response,other,same,sendError sendRedirect
+implementation,Request,Connector | Connector(s),accessor,same,getAsyncTimeout getDiscardFacades getEnableLookups getEncodedSolidusHandlingInternal getMaxCookieCount getMaxLocaleCount getMaxParameterCount getMaxPartCount getMaxPartHeaderSize getMaxPostSize getURICharset getUseBodyEncodingForURI isParseBodyMethod
+implementation,Request,CookieProcessor,creation,n/a,<init>
+implementation,Request,CoyoteRequest,request-model,down,action addPathParameter decodedURI getAttribute getAttributes getCharsetHolder getContentLength getContentLengthLong getContentType getCookies getHeader getLocalPort getMethod getMimeHeaders getParameters getPathParameter getProtocolRequestId getRemotePort getRequestId getServerPort getServletConnection getTrailerFields isFinished isTrailerFieldsReady localAddr localName peerAddr protocol queryString remoteAddr remoteHost requestURI scheme serverName setAttribute setCharsetHolder setContentType setServerPort
+implementation,Request,CoyoteResponse,request-model,down,action
+implementation,Request,FilterChain,accessor,same,findNonAsyncFilters
+implementation,Request,MimeHeaders,request-model,n/a,names values
+implementation,Request,Response,request-model,same,addSessionCookieInternal getCoyoteResponse getHeader getResponse getStatus setStatus
+implementation,Response,Connector | Connector(s),accessor,same,getEnforceEncodingInGetWriter
+implementation,Response,CoyoteRequest,request-model,down,getSupportsRelativeRedirects
+implementation,Response,CoyoteResponse,request-model,down,action addHeader containsHeader getBytesWritten getCharsetHolder getContentLength getContentLengthLong getContentType getLocale getMessage getMimeHeaders getStatus getTrailerFields isCommitted isError isErrorReportRequired reset resetError setCharsetHolder setContentLength setContentType setContentTypeNoCharset setError setErrorReported setHeader setLocale setMessage setStatus setTrailerFields
+implementation,Response,MimeHeaders,request-model,n/a,getHeader getName getValue size values
+implementation,Response,Request,request-model,same,getConnector getContext getCoyoteRequest getDecodedRequestURI getDiscardFacades getRequest getScheme getServerName getServerPort getServletContext getSessionInternal isRequestedSessionIdFromCookie
+implementation,Server,Catalina,accessor,same,getParentClassLoader
+implementation,SocketProcessor,NioEndpoint,accessor,same,getHandler
+implementation,StandardContextValve,Response,other,same,sendAcknowledgement sendError
+implementation,StandardContextValve,Valve,inheritance,same,<init>
+implementation,StandardEngineValve,Response,other,same,isError sendError
+implementation,StandardEngineValve,Valve,inheritance,same,<init>
+implementation,StandardHostValve,CoyoteResponse,other,down,action
+implementation,StandardHostValve,Response,other,same,finishResponse flushBuffer getCoyoteResponse getMessage getResponse getStatus isCommitted isError isErrorReportRequired resetBuffer sendError setAppCommitted setContentLength setError setErrorReported setStatus setSuspended
+implementation,StandardHostValve,Valve,inheritance,same,<init>
+implementation,StandardWrapperValve,Request,accessor,same,getAsyncContextInternal getDispatcherType getRequest getRequestPathMB isAsyncDispatching setAttribute
+implementation,StandardWrapperValve,Response,other,same,getResponse sendError setDateHeader setError setStatus
+implementation,StandardWrapperValve,Valve,inheritance,same,<init>
+implementation,UserDatabaseRealm,Realm,inheritance,same,<init> startInternal stopInternal
+implementation,WebXmlParser,Digester,other,n/a,getParser parse push reset setClassLoader setErrorHandler
+implementation,Worker,Executor,other,n/a,getThreadFactory runWorker
+implementation,Wrapper,Container,inheritance,same,<init> backgroundProcess setParent startInternal stopInternal
+implementation,Wrapper,Context,accessor,same,getInstanceManager getJ2EEApplication getJ2EEServer getSwallowOutput getUnloadDelay
+implementation,Wrapper,Servlet,other,n/a,destroy init
+implementation,Wrapper,StandardWrapperValve,other,same,<init> getErrorCount getMaxTime getMinTime getProcessingTime getRequestCount incrementErrorCount

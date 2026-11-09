@@ -1,0 +1,14 @@
+# Node dependencies
+analysis/node_modules/
+
+# jQAssistant store and reports (rebuilt by the scan)
+analysis/jqassistant/store/
+analysis/jqassistant/jqassistant/
+
+# Technique B work files and Python caches
+analysis/technique_b/work/
+__pycache__/
+
+# OS junk
+.DS_Store
+Thumbs.db

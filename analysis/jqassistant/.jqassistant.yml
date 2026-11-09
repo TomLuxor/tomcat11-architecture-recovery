@@ -1,0 +1,6 @@
+jqassistant:
+  store:
+    uri: file:store
+  analyze:
+    concepts:
+      - java-classpath:Resolve

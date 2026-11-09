@@ -1,0 +1,5 @@
+view,level,C,D,A,unmapped,sameType,recall,recall_mapped
+containment,interface,3,4,2,0,0,0.6,0.6
+messages,interface,56,102,79,12,0,0.38095238095238093,0.4148148148148148
+containment,implementation,2,1,3,0,0,0.4,0.4
+messages,implementation,66,71,69,12,0,0.4489795918367347,0.4888888888888889

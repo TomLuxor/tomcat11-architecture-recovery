@@ -1,0 +1,13 @@
+{
+  "tomcat": "11.0.27",
+  "jars": [
+    "lib/catalina.jar",
+    "lib/tomcat-coyote.jar",
+    "lib/tomcat-util.jar",
+    "lib/tomcat-util-scan.jar",
+    "lib/tomcat-api.jar",
+    "bin/tomcat-juli.jar",
+    "lib/servlet-api.jar"
+  ],
+  "inScope": ["org.apache."]
+}

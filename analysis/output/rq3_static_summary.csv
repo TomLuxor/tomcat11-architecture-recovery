@@ -1,0 +1,9 @@
+mechanism,messages,unique,ambiguous,no-static-call,diagram-error
+interface-dispatch,15,4,11,0,0
+chain-of-responsibility,14,5,9,0,0
+listener-notification,6,0,6,0,0
+reflection,5,0,0,5,0
+inherited-call,5,1,4,0,0
+thread-hand-off,2,0,0,2,0
+other: misspelled in diagram,1,0,0,0,1
+total,48,10,30,7,1

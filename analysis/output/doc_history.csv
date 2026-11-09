@@ -1,0 +1,56 @@
+part,date,commit,author,subject
+overview,2025-10-02,dcd5bbc819,Mark Thomas,Remove @author tags for Yoav Shapira
+overview,2024-11-29,383b0b83b0,Mark Thomas,Remove out-dated references - e.g. to admin app
+overview,2014-12-06,35f3fffe5a,Rainer Jung,Fix typo in docs.
+overview,2013-10-06,4778e9ac12,Konstantin Preißer,"Explicitly state the used encoding in XML files of the ""docs"" webapp."
+overview,2013-02-01,900d1d4740,Konstantin Kolinko,"Correct typo, reported at comments.a.o"
+overview,2011-10-22,73c91a108d,Mark Emlyn David Thomas,Trailing whitespace removal from /webapps
+overview,2009-06-17,ad669250e1,Konstantin Kolinko,trivial: corrected spelling errors in docs
+overview,2008-09-15,c2e65171b5,Mark Emlyn David Thomas,Fix broken links reported on users list.
+overview,2007-08-05,abe33d255b,Mark Emlyn David Thomas,"Add missing licence header to all files in webapps. Again, need to check commit message"
+overview,2006-07-07,74609bd2ae,Remy Maucherat,"- Add the base webapps and stuff, so they're there (not built yet)."
+startup,2025-10-02,dcd5bbc819,Mark Thomas,Remove @author tags for Yoav Shapira
+startup,2025-04-01,17956d216f,John Bampton,webapps/docs: fix spelling in XML files
+startup,2024-09-20,3ca7418df2,Mark Thomas,Remove the out-dated description and diagram
+startup,2024-09-10,635e169a89,Mark Thomas,Add diagram 7 that shows Context configuration process
+startup,2024-09-10,7002f2fe09,Mark Thomas,Remove the remaining SVGs
+startup,2024-09-10,2301a3135f,Mark Thomas,Add diagram 6 - deployment of applications by HostConfig
+startup,2024-09-10,22251c0cfd,remm,Checkstyle
+startup,2024-09-10,49e35f2574,Mark Thomas,Add diagram showing Context start process
+startup,2024-09-10,3c01c7a2b1,Mark Thomas,Fix message type for creation
+startup,2024-09-10,1d1930fd94,Mark Thomas,Replace diagram 4 - Container start process
+startup,2024-09-09,6eae97aa56,Mark Thomas,Add note that more detail for Hosts etc will be in diagram 4
+startup,2024-09-09,31c3b0d731,Mark Thomas,Add a note to show where Hosts etc are initialized
+startup,2024-09-09,152325ab86,Mark Thomas,Add group boxes to show where more detail can be found
+startup,2024-09-06,8a5e8ebda1,Mark Thomas,Use shorthand for return and deactivate
+startup,2024-09-06,722d6fc525,Mark Thomas,Use shorthand for activate
+startup,2024-09-06,45ecc6e523,Mark Thomas,Rename PlantUML files to use explicit file extension (helps editors)
+startup,2024-09-06,8c2d59de01,Mark Thomas,Correct point at which Services fires AFTER_INIT_EVENT
+startup,2024-09-06,e316affa7e,Mark Thomas,"Convert diagram 3, the first part of the start process"
+startup,2024-09-06,1878b30ec2,Mark Thomas,"Add lifecycle events, correct activation, use aliases correctly"
+startup,2024-09-02,0eed9e0f0c,Mark Thomas,Switch to PlantUML for the second diagram
+startup,2024-09-02,5d339a72c2,Mark Thomas,Switch diagram 1 to use PlantUML
+startup,2024-08-28,58bf7b76ca,Mark Thomas,Update the second of the six diagrams.
+startup,2024-08-23,034acfd629,Mark Thomas,Minor corrections
+startup,2024-07-05,77175ae889,Mark Thomas,Add a couple of calls identified when reviewing diagram for backport
+startup,2024-07-05,e002744d83,Mark Thomas,Re-draw first of six sequence diagrams showing how Tomcat starts.
+startup,2024-04-17,15d192a944,Mark Thomas,Fix typo
+startup,2024-04-17,f6d0e9cfa8,Mark Thomas,Convert original Rational Rose mdl file to svgs
+startup,2021-04-26,26ba86cdbd,Mark Thomas,Various JavaEE/J2EE -> Jakarta EE documentation updates
+startup,2019-08-25,9aa02209c9,kangzhidong,fix typo
+startup,2015-05-26,55cb6d33b3,Mark Thomas,Typo
+startup,2013-10-06,4778e9ac12,Konstantin Preißer,"Explicitly state the used encoding in XML files of the ""docs"" webapp."
+startup,2013-09-03,dd07f981d9,Mark Emlyn David Thomas,Further patch (part 3) for https://issues.apache.org/bugzilla/show_bug.cgi?id=55383 Improve markup and design of Tomcat's HTML pages Fix some version references for Tomcat 8
+startup,2011-10-22,73c91a108d,Mark Emlyn David Thomas,Trailing whitespace removal from /webapps
+startup,2010-08-02,0b43bff5b6,Mark Emlyn David Thomas,Tab police
+startup,2009-06-17,ad669250e1,Konstantin Kolinko,trivial: corrected spelling errors in docs
+startup,2007-08-05,abe33d255b,Mark Emlyn David Thomas,"Add missing licence header to all files in webapps. Again, need to check commit message"
+startup,2006-07-07,74609bd2ae,Remy Maucherat,"- Add the base webapps and stuff, so they're there (not built yet)."
+requestProcess,2025-10-02,dcd5bbc819,Mark Thomas,Remove @author tags for Yoav Shapira
+requestProcess,2025-04-29,617eafaa12,Mark Thomas,BZ 68876 sequence diagrams for request processing and authentication
+requestProcess,2015-05-26,51c1c91eca,Mark Thomas,Fix https://bz.apache.org/bugzilla/show_bug.cgi?id=57282 Updated request processing sequence diagrams by Stephen Chen.
+requestProcess,2013-10-06,4778e9ac12,Konstantin Preißer,"Explicitly state the used encoding in XML files of the ""docs"" webapp."
+requestProcess,2009-06-17,ad669250e1,Konstantin Kolinko,trivial: corrected spelling errors in docs
+requestProcess,2007-08-05,abe33d255b,Mark Emlyn David Thomas,"Add missing licence header to all files in webapps. Again, need to check commit message"
+requestProcess,2006-10-24,8df2fb9fc8,Mark Emlyn David Thomas,Correct props.
+requestProcess,2006-07-07,74609bd2ae,Remy Maucherat,"- Add the base webapps and stuff, so they're there (not built yet)."

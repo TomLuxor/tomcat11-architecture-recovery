@@ -1,0 +1,11 @@
+{
+  "name": "tomcat-architecture-recovery-analysis",
+  "private": true,
+  "description": "Analysis scripts of the case study (see README.md)",
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
+  "dependencies": {
+    "neo4j-driver": "^5.28.3"
+  }
+}

@@ -1,0 +1,19 @@
+participant,type,reason
+BasicAuthenticator,org.apache.catalina.authenticator.BasicAuthenticator,Login check of the request; the other candidate belongs to WebSocket (out of scope)
+Host,org.apache.catalina.Host,Only candidate with getPipeline() and start(); the parser Host only reads the HTTP Host header
+Wrapper,org.apache.catalina.Wrapper,"Only candidate with allocate(), deallocate() and getPipeline()"
+Request,org.apache.catalina.connector.Request,"Only candidate with getHost(), getContext(), getWrapper(), getCoyoteRequest() and setRequest()"
+CoyoteRequest,org.apache.coyote.Request,setNote() and getMimeHeaders() exist on the Coyote request
+Response,org.apache.catalina.connector.Response,Only candidate with setResponse()
+CoyoteResponse,org.apache.coyote.Response,setNote() exists on the Coyote response
+InputBuffer,org.apache.coyote.http11.Http11InputBuffer,Only type with parseRequestLine() and parseHeaders(); neither draft candidate has them
+SocketProcessor,org.apache.tomcat.util.net.NioEndpoint$SocketProcessor,Diagram 11_nio shows NioEndpoint and its Poller; Nio2Endpoint appears in no diagram
+Global Naming Resources,org.apache.catalina.deploy.NamingResourcesImpl,Type of the field globalNamingResources in StandardServer; has init() and start()
+SCI,jakarta.servlet.ServletContainerInitializer,SCI = ServletContainerInitializer; has onStartup()
+Filter A,none,"Filter of the web application; we recover the architecture of Tomcat only (settled after disagreement, see mapping_agreement.md)"
+Filter B,none,"Filter of the web application; we recover the architecture of Tomcat only (settled after disagreement, see mapping_agreement.md)"
+Selector,none,"JDK class (java.nio.channels.Selector); not Tomcat code (settled after disagreement, see mapping_agreement.md)"
+ServerSocket,none,"JDK class (java.nio.channels.ServerSocketChannel); not Tomcat code (settled after disagreement, see mapping_agreement.md)"
+SocketChannel,none,"JDK class (java.nio.channels.SocketChannel); not Tomcat code (settled after disagreement, see mapping_agreement.md)"
+UtilityExecutor,none,"JDK class (java.util.concurrent.ScheduledExecutorService); not Tomcat code (settled after disagreement, see mapping_agreement.md)"
+Child,none,Role of a child container; not a type of its own (would be the same type as Container)
