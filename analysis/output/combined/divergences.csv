@@ -1,0 +1,311 @@
+level,from,to,type_pairs,pairs
+interface,AccessLogValve,Container,1,org.apache.catalina.valves.AccessLogValve -> org.apache.catalina.Container
+interface,ApplicationFilterFactory,Context,1,org.apache.catalina.core.ApplicationFilterFactory -> org.apache.catalina.core.StandardContext
+interface,ApplicationFilterFactory,Request,1,org.apache.catalina.core.ApplicationFilterFactory -> org.apache.catalina.connector.Request
+interface,ApplicationFilterFactory,Wrapper,1,org.apache.catalina.core.ApplicationFilterFactory -> org.apache.catalina.Wrapper
+interface,Catalina,Bootstrap,1,org.apache.catalina.startup.Catalina -> org.apache.catalina.startup.Bootstrap
+interface,ConnectionHandler,CoyoteRequest,1,org.apache.coyote.AbstractProtocol$ConnectionHandler -> org.apache.coyote.Request
+interface,Connector | Connector(s),Executor(s),1,org.apache.catalina.connector.Connector -> org.apache.catalina.Executor
+interface,Connector | Connector(s),Request,1,org.apache.catalina.connector.Connector -> org.apache.catalina.connector.Request
+interface,Connector | Connector(s),Response,1,org.apache.catalina.connector.Connector -> org.apache.catalina.connector.Response
+interface,Connector | Connector(s),Server,1,org.apache.catalina.connector.Connector -> org.apache.catalina.Server
+interface,Connector | Connector(s),Service | Service(s),1,org.apache.catalina.connector.Connector -> org.apache.catalina.Service
+interface,Container,ContainerBackgroundProcessor,1,org.apache.catalina.core.ContainerBase -> org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor
+interface,Container,Engine,1,org.apache.catalina.Container -> org.apache.catalina.Engine
+interface,Container,Host,1,org.apache.catalina.Container -> org.apache.catalina.Host
+interface,Container,Server,1,org.apache.catalina.core.ContainerBase -> org.apache.catalina.Server
+interface,Container,Service | Service(s),1,org.apache.catalina.core.ContainerBase -> org.apache.catalina.Service
+interface,Container,StandardPipeline (Context) | StandardPipeline (Engine) | StandardPipeline (Host) | StandardPipeline (Wrapper),1,org.apache.catalina.core.ContainerBase -> org.apache.catalina.core.StandardPipeline
+interface,Container,Valve,1,org.apache.catalina.core.ContainerBase -> org.apache.catalina.Valve
+interface,ContainerBackgroundProcessor,Container,1,org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor -> org.apache.catalina.Container
+interface,ContainerBackgroundProcessor,Context,1,org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor -> org.apache.catalina.Context
+interface,Context,Container,2,org.apache.catalina.core.StandardContext -> org.apache.catalina.Container; org.apache.catalina.core.StandardContext -> org.apache.catalina.core.ContainerBase
+interface,Context,Host,1,org.apache.catalina.core.StandardContext -> org.apache.catalina.core.StandardHost
+interface,Context,Server,1,org.apache.catalina.core.StandardContext -> org.apache.catalina.Server
+interface,Context,Service | Service(s),1,org.apache.catalina.core.StandardContext -> org.apache.catalina.Service
+interface,Context,StandardContextValve,1,org.apache.catalina.core.StandardContext -> org.apache.catalina.core.StandardContextValve
+interface,ContextConfig,Catalina,1,org.apache.catalina.startup.ContextConfig -> org.apache.catalina.startup.Catalina
+interface,ContextConfig,Container,1,org.apache.catalina.startup.ContextConfig -> org.apache.catalina.Container
+interface,ContextConfig,Digester,1,org.apache.catalina.startup.ContextConfig -> org.apache.tomcat.util.digester.Digester
+interface,ContextConfig,Engine,1,org.apache.catalina.startup.ContextConfig -> org.apache.catalina.Engine
+interface,ContextConfig,Global Naming Resources | NamingResourcesImpl,1,org.apache.catalina.startup.ContextConfig -> org.apache.catalina.deploy.NamingResourcesImpl
+interface,ContextConfig,Host,2,org.apache.catalina.startup.ContextConfig -> org.apache.catalina.Host; org.apache.catalina.startup.ContextConfig -> org.apache.catalina.core.StandardHost
+interface,ContextConfig,Pipeline,1,org.apache.catalina.startup.ContextConfig -> org.apache.catalina.Pipeline
+interface,ContextConfig,Server,1,org.apache.catalina.startup.ContextConfig -> org.apache.catalina.Server
+interface,ContextConfig,Service | Service(s),1,org.apache.catalina.startup.ContextConfig -> org.apache.catalina.Service
+interface,ContextConfig,Valve,1,org.apache.catalina.startup.ContextConfig -> org.apache.catalina.Valve
+interface,ContextConfig,Wrapper,1,org.apache.catalina.startup.ContextConfig -> org.apache.catalina.Wrapper
+interface,CookieProcessor,MimeHeaders,1,org.apache.tomcat.util.http.Rfc6265CookieProcessor -> org.apache.tomcat.util.http.MimeHeaders
+interface,CoyoteAdapter,Context,1,org.apache.catalina.connector.CoyoteAdapter -> org.apache.catalina.Context
+interface,CoyoteAdapter,Host,1,org.apache.catalina.connector.CoyoteAdapter -> org.apache.catalina.Host
+interface,CoyoteAdapter,Manager,1,org.apache.catalina.connector.CoyoteAdapter -> org.apache.catalina.Manager
+interface,CoyoteAdapter,Pipeline,1,org.apache.catalina.connector.CoyoteAdapter -> org.apache.catalina.Pipeline
+interface,CoyoteAdapter,Realm,1,org.apache.catalina.connector.CoyoteAdapter -> org.apache.catalina.Realm
+interface,CoyoteAdapter,Valve,1,org.apache.catalina.connector.CoyoteAdapter -> org.apache.catalina.Valve
+interface,CoyoteAdapter,Wrapper,1,org.apache.catalina.connector.CoyoteAdapter -> org.apache.catalina.Wrapper
+interface,CoyoteRequest,CoyoteResponse,1,org.apache.coyote.Request -> org.apache.coyote.Response
+interface,CoyoteRequest,MimeHeaders,1,org.apache.coyote.Request -> org.apache.tomcat.util.http.MimeHeaders
+interface,CoyoteResponse,CoyoteRequest,1,org.apache.coyote.Response -> org.apache.coyote.Request
+interface,CoyoteResponse,MimeHeaders,1,org.apache.coyote.Response -> org.apache.tomcat.util.http.MimeHeaders
+interface,Engine,Container,1,org.apache.catalina.core.StandardEngine -> org.apache.catalina.core.ContainerBase
+interface,Engine,Context,1,org.apache.catalina.core.StandardEngine -> org.apache.catalina.Context
+interface,Engine,Host,1,org.apache.catalina.core.StandardEngine -> org.apache.catalina.Host
+interface,Engine,Pipeline,1,org.apache.catalina.core.StandardEngine -> org.apache.catalina.Pipeline
+interface,Engine,Server,1,org.apache.catalina.core.StandardEngine -> org.apache.catalina.Server
+interface,Engine,Service | Service(s),1,org.apache.catalina.core.StandardEngine -> org.apache.catalina.Service
+interface,Engine,StandardEngineValve,1,org.apache.catalina.core.StandardEngine -> org.apache.catalina.core.StandardEngineValve
+interface,ErrorReportValve,Container,1,org.apache.catalina.valves.ErrorReportValve -> org.apache.catalina.Container
+interface,ErrorReportValve,CoyoteResponse,1,org.apache.catalina.valves.ErrorReportValve -> org.apache.coyote.Response
+interface,ErrorReportValve,Request,1,org.apache.catalina.valves.ErrorReportValve -> org.apache.catalina.connector.Request
+interface,ErrorReportValve,Response,1,org.apache.catalina.valves.ErrorReportValve -> org.apache.catalina.connector.Response
+interface,ErrorReportValve,Valve,2,org.apache.catalina.valves.ErrorReportValve -> org.apache.catalina.Valve; org.apache.catalina.valves.ErrorReportValve -> org.apache.catalina.valves.ValveBase
+interface,Executor(s),Executor,1,org.apache.catalina.core.StandardThreadExecutor -> org.apache.tomcat.util.threads.ThreadPoolExecutor
+interface,Global Naming Resources | NamingResourcesImpl,Container,1,org.apache.catalina.deploy.NamingResourcesImpl -> org.apache.catalina.Container
+interface,Global Naming Resources | NamingResourcesImpl,Server,1,org.apache.catalina.deploy.NamingResourcesImpl -> org.apache.catalina.Server
+interface,Global Naming Resources | NamingResourcesImpl,Service | Service(s),1,org.apache.catalina.deploy.NamingResourcesImpl -> org.apache.catalina.Service
+interface,Host,Container,2,org.apache.catalina.core.StandardHost -> org.apache.catalina.Container; org.apache.catalina.core.StandardHost -> org.apache.catalina.core.ContainerBase
+interface,Host,ErrorReportValve,1,org.apache.catalina.core.StandardHost -> org.apache.catalina.valves.ErrorReportValve
+interface,Host,Pipeline,1,org.apache.catalina.core.StandardHost -> org.apache.catalina.Pipeline
+interface,Host,StandardHostValve,1,org.apache.catalina.core.StandardHost -> org.apache.catalina.core.StandardHostValve
+interface,Host,Valve,1,org.apache.catalina.core.StandardHost -> org.apache.catalina.Valve
+interface,HostConfig,Context,2,org.apache.catalina.startup.HostConfig -> org.apache.catalina.Context; org.apache.catalina.startup.HostConfig -> org.apache.catalina.core.StandardContext
+interface,HostConfig,Digester,1,org.apache.catalina.startup.HostConfig -> org.apache.tomcat.util.digester.Digester
+interface,HostConfig,Host,2,org.apache.catalina.startup.HostConfig -> org.apache.catalina.Host; org.apache.catalina.startup.HostConfig -> org.apache.catalina.core.StandardHost
+interface,HostConfig,Manager,1,org.apache.catalina.startup.HostConfig -> org.apache.catalina.Manager
+interface,InputBuffer,CoyoteRequest,1,org.apache.coyote.http11.Http11InputBuffer -> org.apache.coyote.Request
+interface,Manager,Context,1,org.apache.catalina.session.StandardManager -> org.apache.catalina.Context
+interface,Mapper Listener,Container,1,org.apache.catalina.mapper.MapperListener -> org.apache.catalina.Container
+interface,Mapper Listener,Context,1,org.apache.catalina.mapper.MapperListener -> org.apache.catalina.Context
+interface,Mapper Listener,Engine,1,org.apache.catalina.mapper.MapperListener -> org.apache.catalina.Engine
+interface,Mapper Listener,Host,1,org.apache.catalina.mapper.MapperListener -> org.apache.catalina.Host
+interface,Mapper Listener,Service | Service(s),1,org.apache.catalina.mapper.MapperListener -> org.apache.catalina.Service
+interface,Mapper Listener,Wrapper,1,org.apache.catalina.mapper.MapperListener -> org.apache.catalina.Wrapper
+interface,NioEndpoint,Acceptor,1,org.apache.tomcat.util.net.NioEndpoint -> org.apache.tomcat.util.net.Acceptor
+interface,Pipeline,Container,1,org.apache.catalina.core.StandardPipeline -> org.apache.catalina.Container
+interface,Processor,MimeHeaders,1,org.apache.coyote.http11.Http11Processor -> org.apache.tomcat.util.http.MimeHeaders
+interface,Protocol,NioEndpoint,1,org.apache.coyote.http11.Http11NioProtocol -> org.apache.tomcat.util.net.NioEndpoint
+interface,Realm,Connector | Connector(s),1,org.apache.catalina.realm.RealmBase -> org.apache.catalina.connector.Connector
+interface,Realm,Container,1,org.apache.catalina.realm.RealmBase -> org.apache.catalina.Container
+interface,Realm,Context,1,org.apache.catalina.realm.RealmBase -> org.apache.catalina.Context
+interface,Realm,CredentialHandler,2,org.apache.catalina.realm.RealmBase -> org.apache.catalina.CredentialHandler; org.apache.catalina.realm.RealmBase -> org.apache.catalina.realm.MessageDigestCredentialHandler
+interface,Realm,Engine,1,org.apache.catalina.realm.RealmBase -> org.apache.catalina.Engine
+interface,Realm,Request,1,org.apache.catalina.realm.RealmBase -> org.apache.catalina.connector.Request
+interface,Realm,Response,1,org.apache.catalina.realm.RealmBase -> org.apache.catalina.connector.Response
+interface,Realm,Service | Service(s),1,org.apache.catalina.realm.RealmBase -> org.apache.catalina.Service
+interface,Realm,Wrapper,1,org.apache.catalina.realm.RealmBase -> org.apache.catalina.Wrapper
+interface,Request,Connector | Connector(s),1,org.apache.catalina.connector.Request -> org.apache.catalina.connector.Connector
+interface,Request,Container,1,org.apache.catalina.connector.Request -> org.apache.catalina.Container
+interface,Request,Context,1,org.apache.catalina.connector.Request -> org.apache.catalina.Context
+interface,Request,CookieProcessor,2,org.apache.catalina.connector.Request -> org.apache.tomcat.util.http.CookieProcessor; org.apache.catalina.connector.Request -> org.apache.tomcat.util.http.Rfc6265CookieProcessor
+interface,Request,CoyoteRequest,1,org.apache.catalina.connector.Request -> org.apache.coyote.Request
+interface,Request,CoyoteResponse,1,org.apache.catalina.connector.Request -> org.apache.coyote.Response
+interface,Request,FilterChain,1,org.apache.catalina.connector.Request -> org.apache.catalina.core.ApplicationFilterChain
+interface,Request,Host,1,org.apache.catalina.connector.Request -> org.apache.catalina.Host
+interface,Request,Manager,1,org.apache.catalina.connector.Request -> org.apache.catalina.Manager
+interface,Request,MimeHeaders,1,org.apache.catalina.connector.Request -> org.apache.tomcat.util.http.MimeHeaders
+interface,Request,Pipeline,1,org.apache.catalina.connector.Request -> org.apache.catalina.Pipeline
+interface,Request,Realm,1,org.apache.catalina.connector.Request -> org.apache.catalina.Realm
+interface,Request,Response,1,org.apache.catalina.connector.Request -> org.apache.catalina.connector.Response
+interface,Request,Wrapper,1,org.apache.catalina.connector.Request -> org.apache.catalina.Wrapper
+interface,Response,Connector | Connector(s),1,org.apache.catalina.connector.Response -> org.apache.catalina.connector.Connector
+interface,Response,Context,1,org.apache.catalina.connector.Response -> org.apache.catalina.Context
+interface,Response,CookieProcessor,1,org.apache.catalina.connector.Response -> org.apache.tomcat.util.http.CookieProcessor
+interface,Response,CoyoteRequest,1,org.apache.catalina.connector.Response -> org.apache.coyote.Request
+interface,Response,CoyoteResponse,1,org.apache.catalina.connector.Response -> org.apache.coyote.Response
+interface,Response,MimeHeaders,1,org.apache.catalina.connector.Response -> org.apache.tomcat.util.http.MimeHeaders
+interface,Response,Request,1,org.apache.catalina.connector.Response -> org.apache.catalina.connector.Request
+interface,Server,Catalina,1,org.apache.catalina.core.StandardServer -> org.apache.catalina.startup.Catalina
+interface,Server,Context,1,org.apache.catalina.core.StandardServer -> org.apache.catalina.Context
+interface,Service | Service(s),Container,1,org.apache.catalina.core.StandardService -> org.apache.catalina.Container
+interface,Service | Service(s),Protocol,1,org.apache.catalina.core.StandardService -> org.apache.coyote.ProtocolHandler
+interface,Service | Service(s),Server,1,org.apache.catalina.core.StandardService -> org.apache.catalina.Server
+interface,SocketProcessor,NioEndpoint,1,org.apache.tomcat.util.net.NioEndpoint$SocketProcessor -> org.apache.tomcat.util.net.NioEndpoint
+interface,StandardContextValve,Pipeline,1,org.apache.catalina.core.StandardContextValve -> org.apache.catalina.Pipeline
+interface,StandardContextValve,Response,1,org.apache.catalina.core.StandardContextValve -> org.apache.catalina.connector.Response
+interface,StandardContextValve,Valve,2,org.apache.catalina.core.StandardContextValve -> org.apache.catalina.Valve; org.apache.catalina.core.StandardContextValve -> org.apache.catalina.valves.ValveBase
+interface,StandardEngineValve,Pipeline,1,org.apache.catalina.core.StandardEngineValve -> org.apache.catalina.Pipeline
+interface,StandardEngineValve,Response,1,org.apache.catalina.core.StandardEngineValve -> org.apache.catalina.connector.Response
+interface,StandardEngineValve,Valve,2,org.apache.catalina.core.StandardEngineValve -> org.apache.catalina.Valve; org.apache.catalina.core.StandardEngineValve -> org.apache.catalina.valves.ValveBase
+interface,StandardHostValve,Container,1,org.apache.catalina.core.StandardHostValve -> org.apache.catalina.Container
+interface,StandardHostValve,CoyoteResponse,1,org.apache.catalina.core.StandardHostValve -> org.apache.coyote.Response
+interface,StandardHostValve,Pipeline,1,org.apache.catalina.core.StandardHostValve -> org.apache.catalina.Pipeline
+interface,StandardHostValve,Response,1,org.apache.catalina.core.StandardHostValve -> org.apache.catalina.connector.Response
+interface,StandardHostValve,Valve,2,org.apache.catalina.core.StandardHostValve -> org.apache.catalina.Valve; org.apache.catalina.core.StandardHostValve -> org.apache.catalina.valves.ValveBase
+interface,StandardHostValve,Wrapper,1,org.apache.catalina.core.StandardHostValve -> org.apache.catalina.Wrapper
+interface,StandardPipeline (Context) | StandardPipeline (Engine) | StandardPipeline (Host) | StandardPipeline (Wrapper),Container,1,org.apache.catalina.core.StandardPipeline -> org.apache.catalina.Container
+interface,StandardPipeline (Context) | StandardPipeline (Engine) | StandardPipeline (Host) | StandardPipeline (Wrapper),Valve,1,org.apache.catalina.core.StandardPipeline -> org.apache.catalina.Valve
+interface,StandardRoot,Context,1,org.apache.catalina.webresources.StandardRoot -> org.apache.catalina.Context
+interface,StandardRoot,Host,1,org.apache.catalina.webresources.StandardRoot -> org.apache.catalina.Host
+interface,StandardWrapperValve,Container,1,org.apache.catalina.core.StandardWrapperValve -> org.apache.catalina.Container
+interface,StandardWrapperValve,Context,1,org.apache.catalina.core.StandardWrapperValve -> org.apache.catalina.Context
+interface,StandardWrapperValve,Request,1,org.apache.catalina.core.StandardWrapperValve -> org.apache.catalina.connector.Request
+interface,StandardWrapperValve,Response,1,org.apache.catalina.core.StandardWrapperValve -> org.apache.catalina.connector.Response
+interface,StandardWrapperValve,Valve,1,org.apache.catalina.core.StandardWrapperValve -> org.apache.catalina.valves.ValveBase
+interface,UserDatabaseRealm,Realm,1,org.apache.catalina.realm.UserDatabaseRealm -> org.apache.catalina.realm.RealmBase
+interface,UserDatabaseRealm,Server,1,org.apache.catalina.realm.UserDatabaseRealm -> org.apache.catalina.Server
+interface,Valve,Container,1,org.apache.catalina.valves.ValveBase -> org.apache.catalina.Container
+interface,Valve,Pipeline,1,org.apache.catalina.valves.ValveBase -> org.apache.catalina.Pipeline
+interface,WebappLoader,Container,1,org.apache.catalina.loader.WebappLoader -> org.apache.catalina.Container
+interface,WebappLoader,Context,1,org.apache.catalina.loader.WebappLoader -> org.apache.catalina.Context
+interface,WebXmlParser,Digester,1,org.apache.tomcat.util.descriptor.web.WebXmlParser -> org.apache.tomcat.util.digester.Digester
+interface,Worker,Executor,1,org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker -> org.apache.tomcat.util.threads.ThreadPoolExecutor
+interface,Wrapper,Container,2,org.apache.catalina.core.StandardWrapper -> org.apache.catalina.Container; org.apache.catalina.core.StandardWrapper -> org.apache.catalina.core.ContainerBase
+interface,Wrapper,Context,2,org.apache.catalina.core.StandardWrapper -> org.apache.catalina.Context; org.apache.catalina.core.StandardWrapper -> org.apache.catalina.core.StandardContext
+interface,Wrapper,Pipeline,1,org.apache.catalina.core.StandardWrapper -> org.apache.catalina.Pipeline
+interface,Wrapper,Servlet,1,org.apache.catalina.core.StandardWrapper -> jakarta.servlet.Servlet
+interface,Wrapper,StandardWrapperValve,1,org.apache.catalina.core.StandardWrapper -> org.apache.catalina.core.StandardWrapperValve
+implementation,AccessLogValve,Container,1,org.apache.catalina.valves.AccessLogValve -> org.apache.catalina.Container
+implementation,ApplicationFilterFactory,Context,1,org.apache.catalina.core.ApplicationFilterFactory -> org.apache.catalina.core.StandardContext
+implementation,ApplicationFilterFactory,Request,1,org.apache.catalina.core.ApplicationFilterFactory -> org.apache.catalina.connector.Request
+implementation,ApplicationFilterFactory,Wrapper,1,org.apache.catalina.core.ApplicationFilterFactory -> org.apache.catalina.Wrapper
+implementation,Catalina,Bootstrap,1,org.apache.catalina.startup.Catalina -> org.apache.catalina.startup.Bootstrap
+implementation,ConnectionHandler,CoyoteRequest,1,org.apache.coyote.AbstractProtocol$ConnectionHandler -> org.apache.coyote.Request
+implementation,Connector | Connector(s),Executor(s),1,org.apache.catalina.connector.Connector -> org.apache.catalina.Executor
+implementation,Connector | Connector(s),Request,1,org.apache.catalina.connector.Connector -> org.apache.catalina.connector.Request
+implementation,Connector | Connector(s),Response,1,org.apache.catalina.connector.Connector -> org.apache.catalina.connector.Response
+implementation,Connector | Connector(s),Server,1,org.apache.catalina.connector.Connector -> org.apache.catalina.Server
+implementation,Connector | Connector(s),Service | Service(s),1,org.apache.catalina.connector.Connector -> org.apache.catalina.Service
+implementation,Container,ContainerBackgroundProcessor,1,org.apache.catalina.core.ContainerBase -> org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor
+implementation,Container,Engine,1,org.apache.catalina.Container -> org.apache.catalina.Engine
+implementation,Container,Host,1,org.apache.catalina.Container -> org.apache.catalina.Host
+implementation,Container,Server,1,org.apache.catalina.core.ContainerBase -> org.apache.catalina.Server
+implementation,Container,Service | Service(s),1,org.apache.catalina.core.ContainerBase -> org.apache.catalina.Service
+implementation,Container,StandardPipeline (Context) | StandardPipeline (Engine) | StandardPipeline (Host) | StandardPipeline (Wrapper),1,org.apache.catalina.core.ContainerBase -> org.apache.catalina.core.StandardPipeline
+implementation,Container,Valve,1,org.apache.catalina.core.ContainerBase -> org.apache.catalina.Valve
+implementation,ContainerBackgroundProcessor,Container,1,org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor -> org.apache.catalina.Container
+implementation,ContainerBackgroundProcessor,Context,1,org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor -> org.apache.catalina.Context
+implementation,Context,Container,2,org.apache.catalina.core.StandardContext -> org.apache.catalina.Container; org.apache.catalina.core.StandardContext -> org.apache.catalina.core.ContainerBase
+implementation,Context,Host,1,org.apache.catalina.core.StandardContext -> org.apache.catalina.core.StandardHost
+implementation,Context,Server,1,org.apache.catalina.core.StandardContext -> org.apache.catalina.Server
+implementation,Context,Service | Service(s),1,org.apache.catalina.core.StandardContext -> org.apache.catalina.Service
+implementation,Context,StandardContextValve,1,org.apache.catalina.core.StandardContext -> org.apache.catalina.core.StandardContextValve
+implementation,ContextConfig,Catalina,1,org.apache.catalina.startup.ContextConfig -> org.apache.catalina.startup.Catalina
+implementation,ContextConfig,Container,1,org.apache.catalina.startup.ContextConfig -> org.apache.catalina.Container
+implementation,ContextConfig,Digester,1,org.apache.catalina.startup.ContextConfig -> org.apache.tomcat.util.digester.Digester
+implementation,ContextConfig,Engine,1,org.apache.catalina.startup.ContextConfig -> org.apache.catalina.Engine
+implementation,ContextConfig,Global Naming Resources | NamingResourcesImpl,1,org.apache.catalina.startup.ContextConfig -> org.apache.catalina.deploy.NamingResourcesImpl
+implementation,ContextConfig,Host,2,org.apache.catalina.startup.ContextConfig -> org.apache.catalina.Host; org.apache.catalina.startup.ContextConfig -> org.apache.catalina.core.StandardHost
+implementation,ContextConfig,Pipeline,1,org.apache.catalina.startup.ContextConfig -> org.apache.catalina.Pipeline
+implementation,ContextConfig,Server,1,org.apache.catalina.startup.ContextConfig -> org.apache.catalina.Server
+implementation,ContextConfig,Service | Service(s),1,org.apache.catalina.startup.ContextConfig -> org.apache.catalina.Service
+implementation,ContextConfig,Valve,1,org.apache.catalina.startup.ContextConfig -> org.apache.catalina.Valve
+implementation,ContextConfig,Wrapper,1,org.apache.catalina.startup.ContextConfig -> org.apache.catalina.Wrapper
+implementation,CookieProcessor,MimeHeaders,1,org.apache.tomcat.util.http.Rfc6265CookieProcessor -> org.apache.tomcat.util.http.MimeHeaders
+implementation,CoyoteAdapter,Context,1,org.apache.catalina.connector.CoyoteAdapter -> org.apache.catalina.Context
+implementation,CoyoteAdapter,Host,1,org.apache.catalina.connector.CoyoteAdapter -> org.apache.catalina.Host
+implementation,CoyoteAdapter,Manager,1,org.apache.catalina.connector.CoyoteAdapter -> org.apache.catalina.Manager
+implementation,CoyoteAdapter,Pipeline,1,org.apache.catalina.connector.CoyoteAdapter -> org.apache.catalina.Pipeline
+implementation,CoyoteAdapter,Realm,1,org.apache.catalina.connector.CoyoteAdapter -> org.apache.catalina.Realm
+implementation,CoyoteAdapter,Valve,1,org.apache.catalina.connector.CoyoteAdapter -> org.apache.catalina.Valve
+implementation,CoyoteAdapter,Wrapper,1,org.apache.catalina.connector.CoyoteAdapter -> org.apache.catalina.Wrapper
+implementation,CoyoteRequest,CoyoteResponse,1,org.apache.coyote.Request -> org.apache.coyote.Response
+implementation,CoyoteRequest,MimeHeaders,1,org.apache.coyote.Request -> org.apache.tomcat.util.http.MimeHeaders
+implementation,CoyoteResponse,CoyoteRequest,1,org.apache.coyote.Response -> org.apache.coyote.Request
+implementation,CoyoteResponse,MimeHeaders,1,org.apache.coyote.Response -> org.apache.tomcat.util.http.MimeHeaders
+implementation,Engine,Container,1,org.apache.catalina.core.StandardEngine -> org.apache.catalina.core.ContainerBase
+implementation,Engine,Context,1,org.apache.catalina.core.StandardEngine -> org.apache.catalina.Context
+implementation,Engine,Host,1,org.apache.catalina.core.StandardEngine -> org.apache.catalina.Host
+implementation,Engine,Pipeline,1,org.apache.catalina.core.StandardEngine -> org.apache.catalina.Pipeline
+implementation,Engine,Server,1,org.apache.catalina.core.StandardEngine -> org.apache.catalina.Server
+implementation,Engine,Service | Service(s),1,org.apache.catalina.core.StandardEngine -> org.apache.catalina.Service
+implementation,Engine,StandardEngineValve,1,org.apache.catalina.core.StandardEngine -> org.apache.catalina.core.StandardEngineValve
+implementation,ErrorReportValve,Container,1,org.apache.catalina.valves.ErrorReportValve -> org.apache.catalina.Container
+implementation,ErrorReportValve,CoyoteResponse,1,org.apache.catalina.valves.ErrorReportValve -> org.apache.coyote.Response
+implementation,ErrorReportValve,Request,1,org.apache.catalina.valves.ErrorReportValve -> org.apache.catalina.connector.Request
+implementation,ErrorReportValve,Response,1,org.apache.catalina.valves.ErrorReportValve -> org.apache.catalina.connector.Response
+implementation,ErrorReportValve,Valve,2,org.apache.catalina.valves.ErrorReportValve -> org.apache.catalina.Valve; org.apache.catalina.valves.ErrorReportValve -> org.apache.catalina.valves.ValveBase
+implementation,Executor(s),Executor,1,org.apache.catalina.core.StandardThreadExecutor -> org.apache.tomcat.util.threads.ThreadPoolExecutor
+implementation,Global Naming Resources | NamingResourcesImpl,Container,1,org.apache.catalina.deploy.NamingResourcesImpl -> org.apache.catalina.Container
+implementation,Global Naming Resources | NamingResourcesImpl,Server,1,org.apache.catalina.deploy.NamingResourcesImpl -> org.apache.catalina.Server
+implementation,Global Naming Resources | NamingResourcesImpl,Service | Service(s),1,org.apache.catalina.deploy.NamingResourcesImpl -> org.apache.catalina.Service
+implementation,Host,Container,2,org.apache.catalina.core.StandardHost -> org.apache.catalina.Container; org.apache.catalina.core.StandardHost -> org.apache.catalina.core.ContainerBase
+implementation,Host,ErrorReportValve,1,org.apache.catalina.core.StandardHost -> org.apache.catalina.valves.ErrorReportValve
+implementation,Host,Pipeline,1,org.apache.catalina.core.StandardHost -> org.apache.catalina.Pipeline
+implementation,Host,StandardHostValve,1,org.apache.catalina.core.StandardHost -> org.apache.catalina.core.StandardHostValve
+implementation,Host,Valve,1,org.apache.catalina.core.StandardHost -> org.apache.catalina.Valve
+implementation,HostConfig,Context,2,org.apache.catalina.startup.HostConfig -> org.apache.catalina.Context; org.apache.catalina.startup.HostConfig -> org.apache.catalina.core.StandardContext
+implementation,HostConfig,Digester,1,org.apache.catalina.startup.HostConfig -> org.apache.tomcat.util.digester.Digester
+implementation,HostConfig,Host,2,org.apache.catalina.startup.HostConfig -> org.apache.catalina.Host; org.apache.catalina.startup.HostConfig -> org.apache.catalina.core.StandardHost
+implementation,HostConfig,Manager,1,org.apache.catalina.startup.HostConfig -> org.apache.catalina.Manager
+implementation,InputBuffer,CoyoteRequest,1,org.apache.coyote.http11.Http11InputBuffer -> org.apache.coyote.Request
+implementation,Manager,Context,1,org.apache.catalina.session.StandardManager -> org.apache.catalina.Context
+implementation,Mapper Listener,Container,1,org.apache.catalina.mapper.MapperListener -> org.apache.catalina.Container
+implementation,Mapper Listener,Context,1,org.apache.catalina.mapper.MapperListener -> org.apache.catalina.Context
+implementation,Mapper Listener,Engine,1,org.apache.catalina.mapper.MapperListener -> org.apache.catalina.Engine
+implementation,Mapper Listener,Host,1,org.apache.catalina.mapper.MapperListener -> org.apache.catalina.Host
+implementation,Mapper Listener,Service | Service(s),1,org.apache.catalina.mapper.MapperListener -> org.apache.catalina.Service
+implementation,Mapper Listener,Wrapper,1,org.apache.catalina.mapper.MapperListener -> org.apache.catalina.Wrapper
+implementation,NioEndpoint,Acceptor,1,org.apache.tomcat.util.net.NioEndpoint -> org.apache.tomcat.util.net.Acceptor
+implementation,Pipeline,Container,1,org.apache.catalina.core.StandardPipeline -> org.apache.catalina.Container
+implementation,Processor,MimeHeaders,1,org.apache.coyote.http11.Http11Processor -> org.apache.tomcat.util.http.MimeHeaders
+implementation,Protocol,NioEndpoint,1,org.apache.coyote.http11.Http11NioProtocol -> org.apache.tomcat.util.net.NioEndpoint
+implementation,Realm,Connector | Connector(s),1,org.apache.catalina.realm.RealmBase -> org.apache.catalina.connector.Connector
+implementation,Realm,Container,1,org.apache.catalina.realm.RealmBase -> org.apache.catalina.Container
+implementation,Realm,Context,1,org.apache.catalina.realm.RealmBase -> org.apache.catalina.Context
+implementation,Realm,CredentialHandler,2,org.apache.catalina.realm.RealmBase -> org.apache.catalina.CredentialHandler; org.apache.catalina.realm.RealmBase -> org.apache.catalina.realm.MessageDigestCredentialHandler
+implementation,Realm,Engine,1,org.apache.catalina.realm.RealmBase -> org.apache.catalina.Engine
+implementation,Realm,Request,1,org.apache.catalina.realm.RealmBase -> org.apache.catalina.connector.Request
+implementation,Realm,Response,1,org.apache.catalina.realm.RealmBase -> org.apache.catalina.connector.Response
+implementation,Realm,Service | Service(s),1,org.apache.catalina.realm.RealmBase -> org.apache.catalina.Service
+implementation,Realm,Wrapper,1,org.apache.catalina.realm.RealmBase -> org.apache.catalina.Wrapper
+implementation,Request,Connector | Connector(s),1,org.apache.catalina.connector.Request -> org.apache.catalina.connector.Connector
+implementation,Request,Container,1,org.apache.catalina.connector.Request -> org.apache.catalina.Container
+implementation,Request,Context,1,org.apache.catalina.connector.Request -> org.apache.catalina.Context
+implementation,Request,CookieProcessor,2,org.apache.catalina.connector.Request -> org.apache.tomcat.util.http.CookieProcessor; org.apache.catalina.connector.Request -> org.apache.tomcat.util.http.Rfc6265CookieProcessor
+implementation,Request,CoyoteRequest,1,org.apache.catalina.connector.Request -> org.apache.coyote.Request
+implementation,Request,CoyoteResponse,1,org.apache.catalina.connector.Request -> org.apache.coyote.Response
+implementation,Request,FilterChain,1,org.apache.catalina.connector.Request -> org.apache.catalina.core.ApplicationFilterChain
+implementation,Request,Host,1,org.apache.catalina.connector.Request -> org.apache.catalina.Host
+implementation,Request,Manager,1,org.apache.catalina.connector.Request -> org.apache.catalina.Manager
+implementation,Request,MimeHeaders,1,org.apache.catalina.connector.Request -> org.apache.tomcat.util.http.MimeHeaders
+implementation,Request,Pipeline,1,org.apache.catalina.connector.Request -> org.apache.catalina.Pipeline
+implementation,Request,Realm,1,org.apache.catalina.connector.Request -> org.apache.catalina.Realm
+implementation,Request,Response,1,org.apache.catalina.connector.Request -> org.apache.catalina.connector.Response
+implementation,Request,Wrapper,1,org.apache.catalina.connector.Request -> org.apache.catalina.Wrapper
+implementation,Response,Connector | Connector(s),1,org.apache.catalina.connector.Response -> org.apache.catalina.connector.Connector
+implementation,Response,Context,1,org.apache.catalina.connector.Response -> org.apache.catalina.Context
+implementation,Response,CookieProcessor,1,org.apache.catalina.connector.Response -> org.apache.tomcat.util.http.CookieProcessor
+implementation,Response,CoyoteRequest,1,org.apache.catalina.connector.Response -> org.apache.coyote.Request
+implementation,Response,CoyoteResponse,1,org.apache.catalina.connector.Response -> org.apache.coyote.Response
+implementation,Response,MimeHeaders,1,org.apache.catalina.connector.Response -> org.apache.tomcat.util.http.MimeHeaders
+implementation,Response,Request,1,org.apache.catalina.connector.Response -> org.apache.catalina.connector.Request
+implementation,Server,Catalina,1,org.apache.catalina.core.StandardServer -> org.apache.catalina.startup.Catalina
+implementation,Server,Context,1,org.apache.catalina.core.StandardServer -> org.apache.catalina.Context
+implementation,Service | Service(s),Container,1,org.apache.catalina.core.StandardService -> org.apache.catalina.Container
+implementation,Service | Service(s),Protocol,1,org.apache.catalina.core.StandardService -> org.apache.coyote.ProtocolHandler
+implementation,Service | Service(s),Server,1,org.apache.catalina.core.StandardService -> org.apache.catalina.Server
+implementation,SocketProcessor,NioEndpoint,1,org.apache.tomcat.util.net.NioEndpoint$SocketProcessor -> org.apache.tomcat.util.net.NioEndpoint
+implementation,StandardContextValve,Pipeline,1,org.apache.catalina.core.StandardContextValve -> org.apache.catalina.Pipeline
+implementation,StandardContextValve,Response,1,org.apache.catalina.core.StandardContextValve -> org.apache.catalina.connector.Response
+implementation,StandardContextValve,Valve,2,org.apache.catalina.core.StandardContextValve -> org.apache.catalina.Valve; org.apache.catalina.core.StandardContextValve -> org.apache.catalina.valves.ValveBase
+implementation,StandardEngineValve,Pipeline,1,org.apache.catalina.core.StandardEngineValve -> org.apache.catalina.Pipeline
+implementation,StandardEngineValve,Response,1,org.apache.catalina.core.StandardEngineValve -> org.apache.catalina.connector.Response
+implementation,StandardEngineValve,Valve,2,org.apache.catalina.core.StandardEngineValve -> org.apache.catalina.Valve; org.apache.catalina.core.StandardEngineValve -> org.apache.catalina.valves.ValveBase
+implementation,StandardHostValve,Container,1,org.apache.catalina.core.StandardHostValve -> org.apache.catalina.Container
+implementation,StandardHostValve,CoyoteResponse,1,org.apache.catalina.core.StandardHostValve -> org.apache.coyote.Response
+implementation,StandardHostValve,Pipeline,1,org.apache.catalina.core.StandardHostValve -> org.apache.catalina.Pipeline
+implementation,StandardHostValve,Response,1,org.apache.catalina.core.StandardHostValve -> org.apache.catalina.connector.Response
+implementation,StandardHostValve,Valve,2,org.apache.catalina.core.StandardHostValve -> org.apache.catalina.Valve; org.apache.catalina.core.StandardHostValve -> org.apache.catalina.valves.ValveBase
+implementation,StandardHostValve,Wrapper,1,org.apache.catalina.core.StandardHostValve -> org.apache.catalina.Wrapper
+implementation,StandardPipeline (Context) | StandardPipeline (Engine) | StandardPipeline (Host) | StandardPipeline (Wrapper),Container,1,org.apache.catalina.core.StandardPipeline -> org.apache.catalina.Container
+implementation,StandardPipeline (Context) | StandardPipeline (Engine) | StandardPipeline (Host) | StandardPipeline (Wrapper),Valve,1,org.apache.catalina.core.StandardPipeline -> org.apache.catalina.Valve
+implementation,StandardRoot,Context,1,org.apache.catalina.webresources.StandardRoot -> org.apache.catalina.Context
+implementation,StandardRoot,Host,1,org.apache.catalina.webresources.StandardRoot -> org.apache.catalina.Host
+implementation,StandardWrapperValve,Container,1,org.apache.catalina.core.StandardWrapperValve -> org.apache.catalina.Container
+implementation,StandardWrapperValve,Context,1,org.apache.catalina.core.StandardWrapperValve -> org.apache.catalina.Context
+implementation,StandardWrapperValve,Request,1,org.apache.catalina.core.StandardWrapperValve -> org.apache.catalina.connector.Request
+implementation,StandardWrapperValve,Response,1,org.apache.catalina.core.StandardWrapperValve -> org.apache.catalina.connector.Response
+implementation,StandardWrapperValve,Valve,1,org.apache.catalina.core.StandardWrapperValve -> org.apache.catalina.valves.ValveBase
+implementation,UserDatabaseRealm,Realm,1,org.apache.catalina.realm.UserDatabaseRealm -> org.apache.catalina.realm.RealmBase
+implementation,UserDatabaseRealm,Server,1,org.apache.catalina.realm.UserDatabaseRealm -> org.apache.catalina.Server
+implementation,Valve,Container,1,org.apache.catalina.valves.ValveBase -> org.apache.catalina.Container
+implementation,Valve,Pipeline,1,org.apache.catalina.valves.ValveBase -> org.apache.catalina.Pipeline
+implementation,WebappLoader,Container,1,org.apache.catalina.loader.WebappLoader -> org.apache.catalina.Container
+implementation,WebappLoader,Context,1,org.apache.catalina.loader.WebappLoader -> org.apache.catalina.Context
+implementation,WebXmlParser,Digester,1,org.apache.tomcat.util.descriptor.web.WebXmlParser -> org.apache.tomcat.util.digester.Digester
+implementation,Worker,Executor,1,org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker -> org.apache.tomcat.util.threads.ThreadPoolExecutor
+implementation,Wrapper,Container,2,org.apache.catalina.core.StandardWrapper -> org.apache.catalina.Container; org.apache.catalina.core.StandardWrapper -> org.apache.catalina.core.ContainerBase
+implementation,Wrapper,Context,2,org.apache.catalina.core.StandardWrapper -> org.apache.catalina.Context; org.apache.catalina.core.StandardWrapper -> org.apache.catalina.core.StandardContext
+implementation,Wrapper,Pipeline,1,org.apache.catalina.core.StandardWrapper -> org.apache.catalina.Pipeline
+implementation,Wrapper,Servlet,1,org.apache.catalina.core.StandardWrapper -> jakarta.servlet.Servlet
+implementation,Wrapper,StandardWrapperValve,1,org.apache.catalina.core.StandardWrapper -> org.apache.catalina.core.StandardWrapperValve

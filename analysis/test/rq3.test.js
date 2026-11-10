@@ -12,10 +12,22 @@ test('only messages absent at both levels are classified; the rest is counted by
     { id: 'd', interface_status: 'unmapped', implementation_status: 'unmapped' },
     { id: 'e', interface_status: 'convergence', implementation_status: 'convergence' },
   ];
-  const { toClassify, counts } = selectAbsences(rows);
+  const { toClassify, toExamine, counts } = selectAbsences(rows);
   assert.deepEqual(toClassify.map(r => r.id), ['a']);
-  assert.deepEqual(counts, { absentAtBothLevels: 1, foundAtInterfaceLevelOnly: 1, foundAtImplementationLevelOnly: 1,
-    unmapped: 1, foundAtBothLevels: 1 });
+  assert.deepEqual(toExamine.map(r => r.id), ['a']);
+  assert.deepEqual(counts, { absentAtBothLevels: 1, foundWithCombinedMappingOnly: 0, absentWithCombinedMapping: 1,
+    foundAtInterfaceLevelOnly: 1, foundAtImplementationLevelOnly: 1, unmapped: 1, foundAtBothLevels: 1 });
+});
+
+test('RQ3 examines only the messages absent at both levels that stay absent with the combined mapping', () => {
+  const both = s => ({ interface_status: s, implementation_status: s });
+  const rows = [{ id: 'a', ...both('absence') }, { id: 'b', ...both('absence') }, { id: 'c', ...both('convergence') }];
+  const combined = [{ id: 'a', ...both('absence') }, { id: 'b', ...both('convergence') }, { id: 'c', ...both('convergence') }];
+  const { toClassify, toExamine, counts } = selectAbsences(rows, combined);
+  assert.deepEqual(toClassify.map(r => r.id), ['a', 'b']);
+  assert.deepEqual(toExamine.map(r => r.id), ['a']);
+  assert.equal(counts.foundWithCombinedMappingOnly, 1);
+  assert.equal(counts.absentWithCombinedMapping, 1);
 });
 
 test('similarNames finds names at most two edits away, ignoring case', () => {

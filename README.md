@@ -4,9 +4,9 @@ Replication package for the paper *Recovering the Documented Architecture of Apa
 
 The study compares two static architecture recovery techniques against the architecture documentation that the maintainers of Apache Tomcat publish, using release 11.0.27:
 
-- **Technique A, mapping-based recovery:** reflexion models that check the documented containment relations and the messages of the eleven sequence diagrams. Each component is mapped once to its interface and once to its implementation class.
+- **Technique A, mapping-based recovery:** reflexion models that check the documented containment relations and the messages of the eleven sequence diagrams. Each component is mapped once to its interface, once to its implementation class, and once to both at the same time (combined mapping).
 - **Technique B, clustering-based recovery:** ACDC and Leiden on the type dependency graph, compared with the documented layers and components.
-- **RQ3:** the documented messages that the type-level check misses, classified by the mechanism that hides them and by what a static analysis that follows the type hierarchy could recover.
+- **RQ3:** the documented messages that the type-level check misses with all three mappings, classified by the mechanism that hides them and by what a static analysis that follows the type hierarchy could recover.
 
 ## Contents
 
@@ -26,7 +26,7 @@ The study compares two static architecture recovery techniques against the archi
 |---|---|
 | Subject system (code size, documentation coverage and history) | `module_sizes.csv`, `doc_coverage.csv`, `doc_history.csv`, `overview_checks.csv` (the paper reports the check at 11.0.27) |
 | Intended model and mapping | `participants.csv`, `messages.csv`, `documented_relations.csv`, `mapping_draft.csv`, `mapping.csv` |
-| RQ1, reflexion models | `reflexion_summary.csv`, `reflexion_containment.csv`, `reflexion_messages.csv`, `divergences.csv`, `divergence_kinds.csv` |
+| RQ1, reflexion models | `reflexion_summary.csv`, `reflexion_containment.csv`, `reflexion_messages.csv`, `divergences.csv`, `divergence_kinds.csv`; the combined mapping in `mapping_combined.csv` and `combined/` |
 | RQ2, clusterings | `clustering_summary.csv`, `clustering_components.csv`, `clustering_layers.csv`, `clustering_random_baseline.csv` (chance level), `clustering_mojofm.csv`, `clustering_runs.csv`, `clustering_assignments.csv` |
 | RQ3, missed messages | `rq3_categories.csv`, `rq3_static.csv`, `rq3_static_summary.csv` |
 
@@ -39,6 +39,7 @@ Tools and versions used:
 | Subject system | Apache Tomcat 11.0.27: source checkout at tag `11.0.27` (commit `52f3b364e5`) and binary release |
 | Source model | jQAssistant CLI 2.9.1 (`jqassistant-commandline-neo4jv5`), embedded Neo4j 5.26.20, OpenJDK 25.0.4.1 |
 | Scripts | Node.js 22, `neo4j-driver` 5.28.3 |
+| Combined mapping (v1.1) | new scan with Microsoft Build of OpenJDK 17.0.19, Node.js 20.17; it reproduces the per-level results byte for byte |
 | ACDC | [ARCADE Core](https://github.com/usc-softarch/arcade_core) 1.2.0, Temurin OpenJDK 25.0.5 |
 | Leiden | Python 3.13, `leidenalg` 0.12.0, `igraph` 1.0.0 (`analysis/technique_b/requirements.txt`) |
 

@@ -1,18 +1,24 @@
 // RQ3 helpers: which absent messages are classified, and the facts shown to the classifiers. Pure functions.
 
-// Messages absent at both mapping levels are classified. Messages recovered at one level only depend on the
-// mapping (RQ1), and unmapped ones are counted separately (Section 4.7).
-function selectAbsences(rows) {
+// Messages absent at both mapping levels are classified by mechanism (toClassify). RQ3 examines those of them that
+// stay absent with the combined mapping (toExamine, from combinedRows = combined/reflexion_messages.csv). Messages
+// recovered with one of the mappings only depend on the mapping (RQ1), and unmapped ones are counted separately
+// (Section 4.7). Without combinedRows, toExamine equals toClassify.
+function selectAbsences(rows, combinedRows) {
   const is = (r, i, m) => r.interface_status === i && r.implementation_status === m;
   const toClassify = rows.filter(r => is(r, 'absence', 'absence'));
+  const absentCombined = new Set((combinedRows || rows).filter(r => is(r, 'absence', 'absence')).map(r => r.id));
+  const toExamine = toClassify.filter(r => absentCombined.has(r.id));
   const counts = {
     absentAtBothLevels: toClassify.length,
+    foundWithCombinedMappingOnly: toClassify.length - toExamine.length,
+    absentWithCombinedMapping: toExamine.length,
     foundAtInterfaceLevelOnly: rows.filter(r => is(r, 'convergence', 'absence')).length,
     foundAtImplementationLevelOnly: rows.filter(r => is(r, 'absence', 'convergence')).length,
     unmapped: rows.filter(r => r.interface_status === 'unmapped' || r.implementation_status === 'unmapped').length,
     foundAtBothLevels: rows.filter(r => is(r, 'convergence', 'convergence')).length,
   };
-  return { toClassify, counts };
+  return { toClassify, toExamine, counts };
 }
 
 function editDistance(a, b) {

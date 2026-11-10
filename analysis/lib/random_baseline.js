@@ -34,9 +34,12 @@ function shuffleLabels(clusterOf, random) {
 }
 
 // A cluster is dominated by a layer if more than half of its layered types belong to it.
-//   ownLayerShare  share of the layered types that lie in a cluster dominated by their own layer
-//   againstEdges   edges between two different dominated clusters that run from a lower to a higher layer
-function layerMeasures(clusterOf, layerOf, edges) {
+//   ownLayerShare   share of the layered types that lie in a cluster dominated by their own layer
+//   againstEdges    edges between two different dominated clusters that run from a lower to a higher layer
+//   againstLayered  those among the againstEdges whose two ends are both layered types; the others start or end at a
+//                   type outside the three layers that lies in a dominated cluster (no counterpart in scoring.py)
+// onAgainst(source, target), if given, is called for every edge counted in againstEdges.
+function layerMeasures(clusterOf, layerOf, edges, onAgainst) {
   const members = new Map();
   for (const [node, layer] of layerOf) {
     if (layer === null) continue;
@@ -57,15 +60,20 @@ function layerMeasures(clusterOf, layerOf, edges) {
     layered++;
     if (dominant.get(clusterOf.get(node)) === layer) own++;
   }
-  let against = 0, compared = 0;
+  const isLayered = node => layerOf.get(node) != null;
+  let against = 0, againstLayered = 0, compared = 0;
   for (const [source, target] of edges) {
     const cs = clusterOf.get(source), ct = clusterOf.get(target);
     if (cs === ct || !dominant.has(cs) || !dominant.has(ct)) continue;
     compared++;
-    if (dominant.get(cs) < dominant.get(ct)) against++;
+    if (dominant.get(cs) < dominant.get(ct)) {
+      against++;
+      if (isLayered(source) && isLayered(target)) againstLayered++;
+      if (onAgainst) onAgainst(source, target);
+    }
   }
   return { layeredTypes: layered, dominatedClusters: dominant.size,
-    ownLayerShare: layered ? own / layered : NaN, againstEdges: against, comparedEdges: compared };
+    ownLayerShare: layered ? own / layered : NaN, againstEdges: against, againstLayered, comparedEdges: compared };
 }
 
 // Number of clusters over which the given nodes are distributed (nodes without a cluster are left out).

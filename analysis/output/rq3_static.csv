@@ -3,16 +3,7 @@ id,from,to,message,mechanism,resolution,receivers,called_types
 1_overview:26,Bootstrap,Catalina,setParentClassLoader(),reflection,no-static-call,0,
 1_overview:30,Bootstrap,Catalina,start(),reflection,no-static-call,0,
 1_overview:49,Digester,Server,,reflection,no-static-call,0,
-2_catalina_init:42,Service(s),Engine,init(),interface-dispatch,unique,1,catalina.util.LifecycleBase (71) | catalina.Engine (catalina.core.StandardEngine)
-2_catalina_init:55,Service(s),Executor(s),init(),interface-dispatch,ambiguous,2,catalina.util.LifecycleBase (71) | catalina.Executor (2)
-3_catalina_start_1:55,Service(s),Engine,start(),interface-dispatch,unique,1,catalina.Engine (catalina.core.StandardEngine)
-3_catalina_start_1:73,Service(s),Executor(s),start(),interface-dispatch,ambiguous,2,catalina.Executor (2)
-4_catalina_start_2:36,Container,Realm,start(),interface-dispatch,ambiguous,73,catalina.Lifecycle (73)
-4_catalina_start_2:67,Pipeline,Valve,start(),interface-dispatch,ambiguous,73,catalina.Lifecycle (73)
-5_catalina_start_3:23,Host,Context,start(),inherited-call,ambiguous,6,catalina.Container (6) | catalina.Lifecycle (73)
 5_catalina_start_3:64,Context,Realm,start(),interface-dispatch,ambiguous,73,catalina.Lifecycle (73)
-5_catalina_start_3:86,Context,Pipeline,start(),interface-dispatch,ambiguous,73,catalina.Lifecycle (73)
-5_catalina_start_3:91,Pipeline,Valve,start(),interface-dispatch,ambiguous,73,catalina.Lifecycle (73)
 6_catalina_host_config:25,Host,HostConfig,lifecycleEvent(BEFORE_START_EVENT),listener-notification,ambiguous,24,catalina.LifecycleListener (24)
 6_catalina_host_config:34,Host,HostConfig,lifecycleEvent(START_EVENT),listener-notification,ambiguous,24,catalina.LifecycleListener (24)
 6_catalina_host_config:64,Host,HostConfig,lifecycleEvent(PERIODIC_EVENT),listener-notification,ambiguous,24,catalina.LifecycleListener (24)

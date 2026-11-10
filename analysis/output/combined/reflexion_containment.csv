@@ -1,0 +1,6 @@
+id,from,to,interface_status,implementation_status,fallback
+Server -> Service,Server,Service,convergence,convergence,false
+Service -> Connector,Service,Connector,convergence,convergence,false
+Service -> Engine,Service,Engine,convergence,convergence,false
+Engine -> Host,Engine,Host,convergence,convergence,false
+Host -> Context,Host,Context,convergence,convergence,false

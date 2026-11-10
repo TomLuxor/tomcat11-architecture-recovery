@@ -1,7 +1,7 @@
 // RQ3 (step 8): which of the messages absent at both mapping levels a static analysis that follows the type
 // hierarchy could recover (paper, Section 4.7).
 // Usage: node analysis/rq3_static.js   (needs the jQAssistant server, like rq3_sheet.js)
-// For every message absent at both levels: the calls of the documented method (queries/absence_facts.cypher), the
+// For every such message: the calls of the documented method (queries/absence_facts.cypher), the
 // possible receiver classes of every called type (queries/possible_receivers.cypher), and the resolution by the rules
 // of lib/rq3.js (resolveStatically). The mechanism is taken from the final classification, review/rq3_rules.csv
 // (see review/rq3_agreement.md).
@@ -18,7 +18,7 @@ const read = f => parseCsv(fs.readFileSync(path.join(here, f), 'utf8'));
 const short = fqn => fqn.replace(/^org\.apache\./, '');
 
 async function main() {
-  const { toClassify } = selectAbsences(read('output/reflexion_messages.csv'));
+  const { toExamine } = selectAbsences(read('output/reflexion_messages.csv'), read('output/combined/reflexion_messages.csv'));
   const mapping = new Map(read('output/mapping.csv').map(r => [r.participant, r]));
   const both = label => [...new Set(['interface', 'implementation'].flatMap(l => typesFor(mapping.get(label), l).types))];
   const mechanism = new Map(read('review/rq3_rules.csv').map(r => [r.id, r.category]));
@@ -30,7 +30,7 @@ async function main() {
   const receivers = new Map();
   const rows = [];
   try {
-    for (const m of toClassify) {
+    for (const m of toExamine) {
       const name = m.kind === 'create' ? '<init>' : m.message.split('(')[0].trim();
       const facts = (await session.run(factsQuery, { from: both(m.from), to: both(m.to), name: name.toLowerCase() }))
         .records[0].toObject();

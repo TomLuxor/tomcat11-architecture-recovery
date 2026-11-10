@@ -1,5 +1,7 @@
 group,messages
 absentAtBothLevels,48
+foundWithCombinedMappingOnly,9
+absentWithCombinedMapping,39
 foundAtInterfaceLevelOnly,21
 foundAtImplementationLevelOnly,31
 unmapped,12

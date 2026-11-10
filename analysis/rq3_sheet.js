@@ -1,7 +1,9 @@
 // RQ3 (step 7): prepares the independent classification of the messages absent at both mapping levels.
+// Run after reflexion.js with the combined mapping (README.md), whose results decide which messages RQ3 examines.
 // Usage: node analysis/rq3_sheet.js <author> [<author> ...]   (needs the jQAssistant server, like reflexion.js)
 // Writes review/rq3_facts.md (facts per message), review/rq3_rules.csv (classification by the codebook rules),
-// an empty review/rq3_<author>.csv per author (unless it exists) and output/rq3_groups.csv (messages per group).
+// an empty review/rq3_<author>.csv per author (unless it exists), output/rq3_categories.csv (mechanisms of the messages
+// that stay absent with the combined mapping) and output/rq3_groups.csv (messages per group).
 const fs = require('fs');
 const path = require('path');
 const neo4j = require('neo4j-driver');
@@ -14,7 +16,8 @@ const read = f => parseCsv(fs.readFileSync(path.join(here, f), 'utf8'));
 
 async function main() {
   const authors = process.argv.slice(2);
-  const { toClassify, counts } = selectAbsences(read('output/reflexion_messages.csv'));
+  const { toClassify, toExamine, counts } = selectAbsences(read('output/reflexion_messages.csv'),
+    read('output/combined/reflexion_messages.csv'));
   const mapping = new Map(read('output/mapping.csv').map(r => [r.participant, r]));
   const both = label => [...new Set(['interface', 'implementation'].flatMap(l => typesFor(mapping.get(label), l).types))];
   const query = fs.readFileSync(path.join(here, 'queries', 'absence_facts.cypher'), 'utf8');
@@ -48,7 +51,8 @@ async function main() {
   fs.writeFileSync(path.join(here, 'review', 'rq3_rules.csv'),
     serializeCsv(byRules, ['id', 'from', 'to', 'message', 'category', 'reason']));
   const categories = new Map();
-  for (const r of byRules) {
+  const examined = new Set(toExamine.map(m => m.id));
+  for (const r of byRules.filter(r => examined.has(r.id))) {
     if (!categories.has(r.category)) categories.set(r.category, { category: r.category, messages: 0, example: `${r.id} ${r.from} -> ${r.to}` });
     categories.get(r.category).messages++;
   }

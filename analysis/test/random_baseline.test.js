@@ -35,6 +35,17 @@ test('layerMeasures counts own-layer types and dependencies against the layer or
   assert.equal(m.againstEdges, 1); // only n1->c2 runs from the lower to the higher layer
 });
 
+test('layerMeasures separates the dependencies against the layer order that end outside the layers', () => {
+  // u belongs to no layer but lies in the cluster of layer 3, so n2->u counts against the layer order
+  const layerOf = new Map([['n1', 1], ['n2', 1], ['c1', 3], ['c2', 3], ['u', null]]);
+  const clusterOf = new Map([['n1', 'L1'], ['n2', 'L1'], ['c1', 'L3'], ['c2', 'L3'], ['u', 'L3']]);
+  const seen = [];
+  const m = layerMeasures(clusterOf, layerOf, [['n1', 'c1'], ['n2', 'u'], ['c2', 'n1']], (s, t) => seen.push(`${s}->${t}`));
+  assert.equal(m.againstEdges, 2); // n1->c1 and n2->u run from the cluster of layer 1 to that of layer 3
+  assert.equal(m.againstLayered, 1); // only n1->c1 connects two layered types
+  assert.deepEqual(seen, ['n1->c1', 'n2->u']);
+});
+
 test('layerMeasures leaves a cluster without a majority layer undominated', () => {
   const layerOf = new Map([['a', 1], ['b', 3]]);
   const m = layerMeasures(new Map([['a', 'K'], ['b', 'K']]), layerOf, []);

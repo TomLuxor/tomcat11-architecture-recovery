@@ -5,6 +5,9 @@
 //          self-check also clustering_layers.csv (technique_b/score_clusterings.py) and clustering_components.csv
 // Output:  output/clustering_random_baseline.csv, one row per configuration and measure: the observed mean over the
 //          runs, and mean and 2.5/97.5 percentiles of the random partitions (pooled over the runs).
+//          against_edges_layered counts the dependencies against the layer order that connect two layered types; the
+//          other against_edges end at a type outside the three layers. The script prints the most frequent of these
+//          types per configuration (mean number of such dependencies per run).
 const fs = require('fs');
 const path = require('path');
 const { parseCsv, serializeCsv } = require('./lib/csv');
@@ -32,9 +35,10 @@ runs.set('packages,packages,0', new Map(nodes.map(n => [n.id, n.package])));
 // FNV-1a hash of the run key as its seed
 const seedOf = key => [...key].reduce((h, c) => Math.imul(h ^ c.charCodeAt(0), 16777619) >>> 0, 2166136261);
 
-function score(clusterOf) {
-  const layers = layerMeasures(clusterOf, layerOf, edges);
+function score(clusterOf, onAgainst) {
+  const layers = layerMeasures(clusterOf, layerOf, edges, onAgainst);
   return { own_layer_share: layers.ownLayerShare, against_edges: layers.againstEdges,
+    against_edges_layered: layers.againstLayered,
     components_interface: clusterSpread(components.interface, clusterOf),
     components_implementation: clusterSpread(components.implementation, clusterOf) };
 }
@@ -46,7 +50,13 @@ const componentRows = new Map(read('clustering_components.csv').map(r => [[r.alg
 const byConfiguration = new Map();
 for (const [key, clusterOf] of runs) {
   const [algorithm, config] = key.split(',');
-  const observed = score(clusterOf);
+  const configKey = `${algorithm},${config}`;
+  if (!byConfiguration.has(configKey)) byConfiguration.set(configKey, { observed: [], random: [], outside: new Map() });
+  const entry = byConfiguration.get(configKey);
+  // dependencies against the layer order per type outside the layers at their target end
+  const observed = score(clusterOf, (source, target) => {
+    if (layerOf.get(target) === null) entry.outside.set(target, (entry.outside.get(target) || 0) + 1);
+  });
   const py = pythonLayers.get(key);
   if (py && (Math.abs(Number(py.own_layer_share) - observed.own_layer_share) > 1e-5 || Number(py.against_edges) !== observed.against_edges)) {
     throw new Error(`${key}: layer measures differ from clustering_layers.csv`);
@@ -55,9 +65,6 @@ for (const [key, clusterOf] of runs) {
     const row = componentRows.get(`${key},${level}`);
     if (row && Number(row.clusters) !== observed[`components_${level}`]) throw new Error(`${key}: components differ (${level})`);
   }
-  const configKey = `${algorithm},${config}`;
-  if (!byConfiguration.has(configKey)) byConfiguration.set(configKey, { observed: [], random: [] });
-  const entry = byConfiguration.get(configKey);
   entry.observed.push(observed);
   const random = seededRandom(seedOf(key));
   for (let i = 0; i < permutations; i++) entry.random.push(score(shuffleLabels(clusterOf, random)));
@@ -68,7 +75,7 @@ const percentile = (sorted, p) => sorted[Math.min(sorted.length - 1, Math.floor(
 const rows = [];
 for (const [configKey, entry] of byConfiguration) {
   const [algorithm, config] = configKey.split(',');
-  for (const measure of ['own_layer_share', 'against_edges', 'components_interface', 'components_implementation']) {
+  for (const measure of ['own_layer_share', 'against_edges', 'against_edges_layered', 'components_interface', 'components_implementation']) {
     const random = entry.random.map(r => r[measure]).sort((a, b) => a - b);
     rows.push({ algorithm, config, runs: entry.observed.length, permutations: random.length, measure,
       observed_mean: mean(entry.observed.map(r => r[measure])).toFixed(4),
@@ -80,3 +87,12 @@ fs.writeFileSync(path.join(out, 'clustering_random_baseline.csv'), serializeCsv(
   ['algorithm', 'config', 'runs', 'permutations', 'measure', 'observed_mean', 'random_mean', 'random_p025', 'random_p975']));
 console.table(rows.map(r => ({ configuration: `${r.algorithm} ${r.config}`, measure: r.measure,
   observed: r.observed_mean, random: `${r.random_mean} [${r.random_p025}, ${r.random_p975}]` })));
+
+console.log('Dependencies against the layer order that end at a type outside the layers (mean per run):');
+for (const [configKey, entry] of byConfiguration) {
+  const runCount = entry.observed.length;
+  const total = [...entry.outside.values()].reduce((a, b) => a + b, 0);
+  const top = [...entry.outside].sort((a, b) => b[1] - a[1]).slice(0, 3)
+    .map(([type, n]) => `${type} ${(n / runCount).toFixed(1)}`).join(', ');
+  console.log(`  ${configKey.replace(',', ' ')}: ${(total / runCount).toFixed(1)}${top ? `, most frequent: ${top}` : ''}`);
+}
