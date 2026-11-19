@@ -72,7 +72,7 @@ Run all from the repository root, e.g. `node analysis/parse_diagrams.js <tomcat-
 
 Plural labels such as `Service(s)` are mapped to the singular type. The interface-level column is filled only where a `org.apache.catalina` interface of that name exists.
 
-**Procedure (paper, Section 4.5):** the 18 `ambiguous` and `manual` rows are decided by two authors independently, each in their own copy, before comparing. Record the number of disagreements and how each was resolved.
+**Procedure (paper, Section 4.2 and Appendix C):** the 18 `ambiguous` and `manual` rows are decided by two authors independently, each in their own copy, before comparing. Record the number of disagreements and how each was resolved.
 
 **Outcome:** of the 56 other rows, 45 were confirmed and 11 corrected (`decision = reviewed` in `output/mapping.csv`), e.g. `Protocol`, which the name matching had mapped to a TLS version enum. Conventions: the implementation level holds the standard implementation; for a generic role (Container, Realm, Valve) its common base class; an empty level falls back to the other one (`Cluster`, whose implementation is in the excluded `catalina-ha.jar`). Nested types are not merged into their declaring type. The two reviews of the 18 open rows (`review/mapping_paul.csv`, `review/mapping_demetre.csv`, facts in `review/mapping_instructions.md`) agree on 12; the six differences concern boxes that are not Tomcat code and were settled as unmapped (`review/mapping_agreement.md`, `review/mapping_resolved.csv`).
 
